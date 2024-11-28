@@ -1,0 +1,116 @@
+* {
+  font-family: "ubuntu", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-sidebar {
+  background-color: #fff;
+  width: 260px;
+  padding: 24px;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  background-color: #d5e6f9;
+  flex-grow: 1;
+}
+
+.logo a {
+  text-decoration: none;
+}
+.logo-lg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -10px;
+}
+.logo-lg img {
+  width: 100px;
+  height: auto;
+}
+
+.logo .judul-logo {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 16px;
+  text-align: center;
+  color: #006eed;
+  letter-spacing: 5px;
+  margin: -20px 0 20px 0;
+}
+
+.user-panel {
+  display: flex;
+  background-color: #006eed;
+  border-radius: 5px;
+  align-items: center;
+}
+.img-circle {
+  width: 50px;
+  background-color: yellow;
+  border-radius: 50%;
+  margin: 10px 10px 5px 10px;
+}
+.user-name,
+.user-status {
+  color: #fff;
+}
+.user-status {
+  background-color: #d5e6f9;
+  border-radius: 25px;
+  padding: 3px 8px;
+  font-size: 12px;
+  color: #006eed;
+}
+
+.sidebar li {
+  list-style: none;
+}
+
+/* Style dasar untuk menu */
+.menu a {
+  display: flex; /* Agar ikon dan deskripsi sejajar */
+  align-items: center;
+  text-decoration: none;
+  color: #006eed; /* Warna teks default */
+  background-color: #f5f5f5; /* Warna latar default */
+  border-radius: 5px;
+  padding: 10px 15px; /* Spasi internal */
+  margin: 3px 0;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Efek transisi */
+}
+
+/* Ikon default */
+.menu a .icon-menu {
+  margin-right: 10px; /* Spasi antara ikon dan deskripsi */
+  color: #006eed; /* Warna ikon default */
+  transition: color 0.3s ease; /* Efek transisi untuk warna */
+}
+
+/* Deskripsi default */
+.menu a .description {
+  color: #006eed; /* Warna teks default */
+  transition: color 0.3s ease; /* Efek transisi untuk warna */
+}
+
+/* Efek hover pada menu */
+.menu a:hover {
+  background-color: #006eed; /* Ubah background menjadi biru */
+  color: #fff; /* Ubah teks menjadi putih */
+}
+
+/* Efek hover untuk ikon dan deskripsi */
+.menu a:hover .icon-menu,
+.menu a:hover .description {
+  color: #fff; /* Ikon dan deskripsi berubah menjadi putih */
+}
