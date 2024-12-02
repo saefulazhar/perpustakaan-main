@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: url("background2.png") no-repeat center;
+  background-size: cover;
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.1); /* Transparent white */
+  backdrop-filter: blur(5px); /* Blur effect */
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container .btn {
+  width: 50%;
+  height: 45px;
+  background: rgb(2, 2, 2);
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-container img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-container label {
+  font-size: 14px;
+  color: #ffffff;
+}
+.input-container > .forget {
+  text-align: right; /* Menggeser ke kanan */
+}
+
+.input-container > .forget label {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ffffff;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  margin-top: 8px;
+  box-sizing: border-box;
+  color: #ffffff; /* Menjadikan teks putih */
+}
+.input-container input::placeholder {
+  color: #ffffff; /* Menjadikan placeholder berwarna putih */
+}
+
+.input-container input:focus {
+  border-color: #ffffff;
+  outline: none;
+}
+
+.login-btn {
+  background-color: #0f0f0f;
+  color: rgb(0, 0, 0);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  background-color: #0f0f0f;
+}
