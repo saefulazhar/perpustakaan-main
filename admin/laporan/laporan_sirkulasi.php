@@ -1,22 +1,14 @@
 <section class="content-header">
-	<h1 style="text-align:center;">
-		Laporan Sirkulasi
+	<h1>
+		Laporan Peminjaman
 	</h1>
-	<ol class="breadcrumb">
-		<li>
-			<a href="index.php">
-				<i class="fa fa-home"></i>
-				<b>Si Perpustakaan</b>
-			</a>
-		</li>
-	</ol>
 </section>
 <!-- Main content -->
 <section class="content">
 	<div class="box box-primary">
 		<div class="box-header with-border">
-		<a href="?page=MyApp/print_laporan" title="Print" class="btn btn-success" stlye="color : green;">
-				<i class="glyphicon glyphicon-print"></i>Print</a>
+		<a href="?page=MyApp/print_laporan" title="Print" class="btn btn-success">
+		<ion-icon name="print" class="icon-top"></ion-icon>Print</a>
 		</div>
 		<!-- /.box-header -->
 

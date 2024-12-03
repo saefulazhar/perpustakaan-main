@@ -48,23 +48,23 @@
 <!-- Main content -->
 <section class="content">
 	<!-- Small boxes (Stat box) -->
-	<div class="row">
+	<div class="row card-container">
 
 		<div class="col-lg-3 col-xs-6">
 			<!-- small box -->
 			<div class="small-box bg-blue">
 				<div class="inner">
+					<div class="text">
 					<h4>
 						<?= $buku; ?>
 					</h4>
-
-					<p>Buku</p>
-				</div>
-				<div class="icon">
-					<i class="ion ion-stats-bars"></i>
+					<p>Jumlah Buku</p>
+					</div>
+					<div class="icon">
+					<ion-icon name="library"></ion-icon>
+					</div>
 				</div>
 				<a href="?page=MyApp/data_buku" class="small-box-footer">More info
-					<i class="fa fa-arrow-circle-right"></i>
 				</a>
 			</div>
 		</div>
@@ -73,17 +73,17 @@
 			<!-- small box -->
 			<div class="small-box bg-yellow">
 				<div class="inner">
-					<h4>
-						<?= $buku; ?>
-					</h4>
-
-					<p>Anggota</p>
-				</div>
-				<div class="icon">
-					<i class="ion ion-person-add"></i>
+					<div class="text">
+						<h4>
+							<?= $agt; ?>
+						</h4>
+						<p>Jumlah Anggota</p>
+					</div>
+					<div class="icon">
+					<ion-icon name="people"></ion-icon>
+					</div>
 				</div>
 				<a href="?page=MyApp/data_agt" class="small-box-footer">More info
-					<i class="fa fa-arrow-circle-right"></i>
 				</a>
 			</div>
 		</div>
@@ -92,17 +92,17 @@
 			<!-- small box -->
 			<div class="small-box bg-green">
 				<div class="inner">
-					<h4>
-						<?= $pin; ?>
-					</h4>
-
-					<p>Sirkulasi yang sedang berjalan</p>
-				</div>
-				<div class="icon">
-					<i class="ion ion-stats-bars"></i>
+					<div class="text">
+						<h4>
+							<?= $pin; ?>
+						</h4>
+						<p>Jumlah Peminjaman</p>
+					</div>
+					<div class="icon">
+					<ion-icon name="swap-vertical"></ion-icon>
+					</div>
 				</div>
 				<a href="?page=data_sirkul" class="small-box-footer">More info
-					<i class="fa fa-arrow-circle-right"></i>
 				</a>
 			</div>
 		</div>
@@ -111,17 +111,17 @@
 			<!-- small box -->
 			<div class="small-box bg-red">
 				<div class="inner">
-					<h4>
-						<?= $kem; ?>
-					</h4>
-
-					<p>Laporan Sirkulasi</p>
-				</div>
-				<div class="icon">
-					<i class="ion ion-stats-bars"></i>
+					<div class="text">
+						<h4>
+							<?= $kem; ?>
+						</h4>
+						<p>Laporan Sirkulasi</p>
+					</div>
+					<div class="icon">
+					<ion-icon name="document"></ion-icon>
+					</div>
 				</div>
 				<a href="?page=log_kembali" class="small-box-footer">More info
-					<i class="fa fa-arrow-circle-right"></i>
 				</a>
 			</div>
 		</div>

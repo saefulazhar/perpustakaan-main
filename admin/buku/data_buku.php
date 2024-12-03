@@ -1,22 +1,14 @@
 <section class="content-header">
-	<h1 style="text-align:center;">
-		Data Buku
+	<h1>
+		Kelola Buku
 	</h1>
-	<ol class="breadcrumb">
-		<li>
-			<a href="index.php">
-				<i class="fa fa-home"></i>
-				<b>Si Perpustakaan</b>
-			</a>
-		</li>
-	</ol>
 </section>
 <!-- Main content -->
 <section class="content">
 	<div class="box box-primary">
 		<div class="box-header with-border">
 			<a href="?page=MyApp/add_buku" title="Tambah Data" class="btn btn-primary">
-				<i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+			<ion-icon name="add-circle" class="icon-top"></ion-icon>Tambah Data</a>
 		</div>
 		<!-- /.box-header -->
 		<div class="box-body">
@@ -30,7 +22,7 @@
 							<th>Pengarang</th>
 							<th>Penerbit</th>
 							<th>Tahun</th>
-							<th>Kelola</th>
+							<th>Aksi</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -63,12 +55,12 @@
 
 							<td>
 								<a href="?page=MyApp/edit_buku&kode=<?php echo $data['id_buku']; ?>" title="Ubah"
-								 class="btn btn-success">
-									<i class="glyphicon glyphicon-edit"></i>
+								 class="btn-success btn-action">
+								 <ion-icon name="create"></ion-icon>
 								</a>
 								<a href="?page=MyApp/del_buku&kode=<?php echo $data['id_buku']; ?>" onclick="return confirm('Yakin Hapus Data Ini ?')"
-								 title="Hapus" class="btn btn-danger">
-									<i class="glyphicon glyphicon-trash"></i>
+								 title="Hapus" class="btn-danger btn-action">
+								 <ion-icon name="trash"></ion-icon>
 							</td>
 						</tr>
 						<?php

@@ -1,16 +1,18 @@
 <section class="content-header">
-	<h1 style="text-align:center;">
-		Riwayat Peminjaman Buku
+	<h1>
+		Riwayat Pinjam Buku
 	</h1>
-	<ol class="breadcrumb">
-		<li>
-			<a href="index.php">
-				<i class="fa fa-home"></i>
-				<b>Si Perpustakaan</b>
-			</a>
-		</li>
-	</ol>
 </section>
+
+<div class="btn-log">
+			<a href="?page=log_pinjam" title="Log Pinjam" class="btn-pinjam">
+			<ion-icon name="arrow-up" class="icon-log"></ion-icon>Log Pinjam</a>
+</div>
+<div class="btn-log">
+			<a href="?page=log_kembali" title="Log Kembali" class="btn-kembali">
+			<ion-icon name="arrow-down" class="icon-log"></ion-icon>Log Kembali</a>
+</div>
+
 <!-- Main content -->
 <section class="content">
 	<div class="box box-primary">

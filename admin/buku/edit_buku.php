@@ -12,14 +12,7 @@
 		Master Data
 		<small>Data Buku</small>
 	</h1>
-	<ol class="breadcrumb">
-		<li>
-			<a href="index.php">
-				<i class="fa fa-home"></i>
-				<b>Si Perpustakaan</b>
-			</a>
-		</li>
-	</ol>
+
 </section>
 
 <section class="content">

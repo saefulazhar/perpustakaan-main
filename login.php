@@ -10,52 +10,47 @@ include "inc/koneksi.php";
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Login | SI Perpustakaan</title>
-	<link rel="icon" href="dist/img/logo.png">
+	<title>Login | UNILIB</title>
+	<link rel="icon" href="asset/image/logo-unilib.png">
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<!-- Bootstrap 3.3.6 -->
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!-- font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 	<!-- Ionicons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-	<!-- Theme style -->
-	<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
 
-	<link rel="stylesheet" href="styless.css">
 
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+	<link rel="stylesheet" href="style.css">
+
+
 </head>
-
-<body class="hold-transition login-page" style="background-image: url('background.jpg');">
+<body class="login-bg">
+	<div class="logo-agency">
+		<img src="asset/image/logo-horizon.png" alt="Logo">
+		<img src="asset/image/logo-unilib.png" alt="Logo">
+		<img src="asset/image/logo-perpusnas.png" alt="Logo">
+	</div>
 	<div class="login-box">
-		<div class="login-logo">
+		<div class="login-title">
 			<h3>
-				<font color="green">
-					<b>Sistem Informasi Perpustakaan</b>
-				</font>
+					<b>University Library</b>
 			</h3>
-			</a>
 		</div>
 		<!-- /.login-logo -->
 		<div class="login-box-body">
 			<center>
-				<img src="dist/img/logo.png" width=160px />
+				<img src="asset/image/logo-unilib.png" width=160px />
 			</center>
 			<br>
 			<p class="login-box-msg">Login System</p>
 			<form action="#" method="post">
-				<div class="form-group has-feedback">
+				<div class="input-box">
 					<input type="text" class="form-control" name="username" placeholder="Username" required>
 					<span class="glyphicon glyphicon-user form-control-feedback"></span>
 				</div>
-				<div class="form-group has-feedback">
+				<div class="input-box">
 					<input type="password" class="form-control" name="password" placeholder="Password" required>
 					<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
@@ -64,8 +59,8 @@ include "inc/koneksi.php";
 
 					</div>
 					<!-- /.col -->
-					<div class="col-xs-4">
-						<button type="submit" class="btn btn-success btn-block btn-flat" name="btnLogin" title="Masuk Sistem">
+					<div class="btn-wrapper">
+						<button type="submit" class="btn" name="btnLogin" title="Masuk Sistem">
 							<b>Masuk</b>
 						</button>
 					</div>
