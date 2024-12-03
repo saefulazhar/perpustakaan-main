@@ -1,23 +1,20 @@
 <section class="content-header">
 	<h1>
-		Sirkulasi
+		Peminjaman
 		<small>Buku</small>
 	</h1>
-	<ol class="breadcrumb">
-		<li>
-			<a href="index.php">
-				<i class="fa fa-home"></i>
-				<b>Si Perpustakaan</b>
-			</a>
-		</li>
-	</ol>
 </section>
+
+<h4 class="note">
+    **Masa peminjaman buku adalah <span class="highlight">7 hari</span> dari tanggal peminjaman.
+    <br> Jika buku dikembalikan lebih dari masa peminjaman, maka akan dikenakan <span class="highlight">denda</span> sebesar <span class="highlight">Rp 1.000/hari</span>.
+</h4>
 <!-- Main content -->
 <section class="content">
 	<div class="box box-primary">
 		<div class="box-header with-border">
 			<a href="?page=add_sirkul" title="Tambah Data" class="btn btn-primary">
-				<i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+			<ion-icon name="add-circle" class="icon-top"></ion-icon>Tambah Data</a>
 		</div>
 		<!-- /.box-header -->
 		<div class="box-body">
@@ -32,7 +29,7 @@
 							<th>Tgl Pinjam</th>
 							<th>Jatuh Tempo</th>
 							<th>Denda</th>
-							<th>Kelola</th>
+							<th>Aksi</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -112,11 +109,12 @@
 							<?php } ?>
 
 							<td>
-								<a href="?page=panjang&kode=<?php echo $data['id_sk']; ?>" onclick="return confirm('Perpanjang Data Ini ?')" title="Perpanjang" class="btn btn-success">
-									<i class="glyphicon glyphicon-upload"></i>
+								<a href="?page=panjang&kode=<?php echo $data['id_sk']; ?>" onclick="return confirm('Perpanjang Data Ini ?')" title="Perpanjang" class="btn-success btn-action">
+								<ion-icon name="arrow-up" style="font-size: 16px;"></ion-icon>
 								</a>
-								<a href="?page=kembali&kode=<?php echo $data['id_sk']; ?>" onclick="return confirm('Kembalikan Buku Ini ?')" title="Kembalikan" class="btn btn-danger">
-									<i class="glyphicon glyphicon-download"></i>
+								<a href="?page=kembali&kode=<?php echo $data['id_sk']; ?>" onclick="return confirm('Kembalikan Buku Ini ?')" title="Kembalikan" class="btn-danger btn-action">
+								<ion-icon name="arrow-down" style="font-size: 16px;"></ion-icon>
+								</a>
 							</td>
 							</tr>
 						<?php
@@ -128,9 +126,5 @@
 			</div>
 		</div>
 	</div>
-	<h4> *Note
-		<br> Masa peminjaman buku adalah <span style="color:red; font-weight:bold;">7 hari</span> dari tanggal peminjaman.
-		<br> Jika buku dikembalikan lebih dari masa peminjaman, maka akan dikenakan <span style="color:red; font-weight:bold;">denda</span>
-		<br> sebesar <span style="color:red; font-weight:bold;">Rp 1.000/hari</span>.
-	</h4>
+	
 </section>

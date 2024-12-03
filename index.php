@@ -32,10 +32,10 @@ include "inc/koneksi.php";
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!--  Font Awesome  -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"> -->
 	<!-- Ionicons -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"> -->
 	<!-- DataTables -->
 	<link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
 	<!-- Select2 -->
@@ -60,7 +60,7 @@ include "inc/koneksi.php";
 						<a href="index.php">
 							<span class="logo-lg">
 								<img src="asset/image/logo-unilib.png">
-								<p class="judul-logo">UNILIB</p>
+								<p class="judul-logo">UNIVERSITY LIBRARY</p>
 							</span>
 						</a>
 					</div>
@@ -81,7 +81,6 @@ include "inc/koneksi.php";
 						</div>
 					</div>
 				</div>
-				</br>
 
 				<!-- Sidebar menu -->
 				<div class="menu-sidebar">
@@ -96,7 +95,7 @@ include "inc/koneksi.php";
 	
 							<li class="menu">
 								<a href="?page=admin">
-									<i class="fa fa-dashboard icon-menu"></i>
+								<ion-icon name="grid"></ion-icon>
 									<span class="description">Dashboard</span>
 									<span class="pull-right-container">
 									</span>
@@ -104,8 +103,17 @@ include "inc/koneksi.php";
 							</li>
 	
 							<li class="menu">
+								<a href="?page=data_sirkul">
+								<ion-icon name="swap-vertical"></ion-icon>
+									<span class="description">Peminjaman</span>
+									<span class="pull-right-container">
+									</span>
+								</a>
+							</li>
+
+							<li class="menu">
 									<a href="?page=MyApp/data_buku">
-									<i class="fa fa-book icon-menu"></i>
+									<ion-icon name="library"></ion-icon>
 									<span class="description">Kelola Buku</span>
 									<span class="pull-right-container">
 									</span>
@@ -113,7 +121,7 @@ include "inc/koneksi.php";
 	
 							<li class="menu">
 									<a href="?page=MyApp/data_agt">
-									<i class="fa fa-users icon-menu" ></i>
+									<ion-icon name="people"></ion-icon>
 									<span class="description">Kelola Anggota</span>
 									<span class="pull-right-container">
 									</span>
@@ -121,38 +129,18 @@ include "inc/koneksi.php";
 							</li>
 	
 							<li class="menu">
-								<a href="?page=data_sirkul">
-									<i class="fa fa-refresh icon-menu"></i>
-									<span class="description">Peminjaman</span>
+								<a href="?page=log_pinjam">
+								<ion-icon name="file-tray-full"></ion-icon>
+									<span class="description">Log Peminjaman</span>
 									<span class="pull-right-container">
 									</span>
 								</a>
-							</li>
-	
-							<li class="menu">
-								<a href="#">
-									<i class="fa fa-book icon-menu"></i>
-									<span class="description">Log Data</span>
-									<span class="pull-right-container">
-									</span>
-								</a>
-	
-								<!-- <ul class="menu">
-									<li>
-										<a href="?page=log_pinjam">
-											<i class="fa fa-arrow-circle-o-down icon-menu"></i>Peminjaman</a>
-									</li>
-									<li>
-										<a href="?page=log_kembali">
-											<i class="fa fa-arrow-circle-o-up icon-menu"></i>Pengembalian</a>
-									</li>
-								</ul> -->
 							</li>
 	
 	
 							<li class="menu">
 								<a href="?page=laporan_sirkulasi">
-									<i class="fa fa-file icon-menu"></i>
+								<ion-icon name="document"></ion-icon>
 									<span class="description">Laporan Sirkulasi</span>
 									<span class="pull-right-container">
 									</span>
@@ -164,7 +152,7 @@ include "inc/koneksi.php";
 	
 							<li class="menu">
 								<a href="?page=MyApp/data_pengguna">
-									<i class="fa fa-user icon-menu"></i>
+								<ion-icon name="person-circle"></ion-icon>
 									<span class="description">Pengguna Sistem</span>
 									<span class="pull-right-container">
 									</span>
@@ -175,9 +163,9 @@ include "inc/koneksi.php";
 						} elseif ($data_level == "Petugas") {
 						?>
 	
-							<li class="menu">
-								<a href="?page=petugas">
-									<i class="fa fa-dashboard icon-menu"></i>
+	<li class="menu">
+								<a href="?page=admin">
+								<ion-icon name="grid"></ion-icon>
 									<span class="description">Dashboard</span>
 									<span class="pull-right-container">
 									</span>
@@ -185,71 +173,48 @@ include "inc/koneksi.php";
 							</li>
 	
 							<li class="menu">
-								<a href="#">
-									<i class="fa fa-folder icon-menu"></i>
-									<span class="description">Kelola Data</span>
-									<span class="pull-right-container">
-										<i class="fa fa-angle-left pull-right"></i>
-									</span>
-								</a>
-								<ul class="menu">
-	
-									<li>
-										<a href="?page=MyApp/data_buku">
-											<i class="fa fa-book icon-menu"></i>Data Buku</a>
-									</li>
-									<li>
-										<a href="?page=MyApp/data_agt">
-											<i class="fa fa-users icon-menu"></i>Data Anggota</a>
-									</li>
-								</ul>
-							</li>
-	
-							<li class="menu">
 								<a href="?page=data_sirkul">
-									<i class="fa fa-refresh icon-menu"></i>
-									<span class="description">Data Sirkulasi</span>
+								<ion-icon name="swap-vertical"></ion-icon>
+									<span class="description">Peminjaman</span>
+									<span class="pull-right-container">
+									</span>
+								</a>
+							</li>
+
+							<li class="menu">
+									<a href="?page=MyApp/data_buku">
+									<ion-icon name="library"></ion-icon>
+									<span class="description">Kelola Buku</span>
+									<span class="pull-right-container">
+									</span>
+								</a>
+	
+							<li class="menu">
+									<a href="?page=MyApp/data_agt">
+									<ion-icon name="people"></ion-icon>
+									<span class="description">Kelola Anggota</span>
 									<span class="pull-right-container">
 									</span>
 								</a>
 							</li>
 	
 							<li class="menu">
-								<a href="#">
-									<i class="fa fa-book icon-menu"></i>
-									<span class="description">Log Data</span>
+								<a href="?page=log_pinjam">
+								<ion-icon name="file-tray-full"></ion-icon>
+									<span class="description">Log Peminjaman</span>
 									<span class="pull-right-container">
-										<i class="fa fa-angle-left pull-right"></i>
 									</span>
 								</a>
-	
-								<ul class="menu">
-									<li>
-										<a href="?page=log_pinjam">
-											<i class="fa fa-arrow-circle-o-down icon-menu"></i>Peminjaman</a>
-									</li>
-									<li>
-										<a href="?page=log_kembali">
-											<i class="fa fa-arrow-circle-o-up icon-menu"></i>Pengembalian</a>
-									</li>
-								</ul>
 							</li>
 	
+	
 							<li class="menu">
-								<a href="#">
-									<i class="fa fa-print icon-menu"></i>
-									<span class="description">Laporan</span>
+								<a href="?page=laporan_sirkulasi">
+								<ion-icon name="document"></ion-icon>
+									<span class="description">Laporan Sirkulasi</span>
 									<span class="pull-right-container">
-										<i class="fa fa-angle-left pull-right"></i>
 									</span>
 								</a>
-								
-								<ul class="menu">
-									<li>
-										<a href="?page=laporan_sirkulasi">
-											<i class="fa fa-file icon-menu"></i>Laporan Sirkulasi</a>
-									</li>
-								</ul>
 							</li>
 	
 							<li class="title">SETTING</li>
@@ -260,7 +225,7 @@ include "inc/koneksi.php";
 	
 						<li class="menu">
 							<a href="logout.php" onclick="return confirm('Anda yakin keluar dari aplikasi ?')">
-								<i class="fa fa-sign-out icon-menu"></i>
+							<ion-icon name="log-out"></ion-icon>
 								<span class="description">Logout</span>
 								<span class="pull-right-container"></span>
 							</a>
@@ -396,22 +361,11 @@ include "inc/koneksi.php";
 
 		<!-- jQuery 2.2.3 -->
 		<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
-			 
-		<!--Bootstrap 3.3.6 -->
-			
-		<script src = "bootstrap/js/bootstrap.min.js"></script>
-		
 
 		<script src="plugins/select2/select2.full.min.js"></script>
 		<!-- DataTables -->
 		<script src="plugins/datatables/jquery.dataTables.min.js"></script>
 		<script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
-
-		<!-- AdminLTE App -->
-		<script src="dist/js/app.min.js"></script>
-		<!-- AdminLTE for demo purposes -->
-		<script src="dist/js/demo.js"></script>
-		<!-- page script -->
 
 
 		<script>
@@ -440,5 +394,8 @@ include "inc/koneksi.php";
 			});
 		</script>
 
+
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

@@ -16,20 +16,10 @@ $format = "B"."00".$tambah;
 				
 ?>
 
-<section class="content-header">
-	<ol class="breadcrumb">
-		<li>
-			<a href="index.php">
-				<i class="fa fa-home"></i>
-				<b>Si Perpustakaan</b>
-			</a>
-		</li>
-	</ol>
-</section>
 
 <section class="content">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-12 form-tambah-buku">
 			<!-- general form elements -->
 			<div class="box box-info">
 				<div class="box-header with-border">
@@ -42,7 +32,7 @@ $format = "B"."00".$tambah;
 						<div class="form-group">
 							<label>ID Buku</label>
 							<input type="text" name="id_buku" id="id_buku" class="form-control" value="<?php echo $format; ?>"
-							 readonly/>
+							readonly/>
 						</div>
 
 						<div class="form-group">
@@ -75,6 +65,8 @@ $format = "B"."00".$tambah;
 				</form>
 			</div>
 			<!-- /.box -->
+		</div>
+	</div>
 </section>
 
 <?php

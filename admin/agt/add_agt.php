@@ -1,39 +1,26 @@
 <?php
 //kode 9 digit
   
-$carikode = mysqli_query($koneksi,"SELECT id_anggota FROM tb_anggota order by id_anggota desc");
+$carikode = mysqli_query($koneksi, "SELECT id_anggota FROM tb_anggota ORDER BY id_anggota DESC");
 $datakode = mysqli_fetch_array($carikode);
 $kode = $datakode['id_anggota'];
 $urut = substr($kode, 1, 3);
 $tambah = (int) $urut + 1;
 
-if (strlen($tambah) == 1){
-$format = "A"."00".$tambah;
- 	}else if (strlen($tambah) == 2){
- 	$format = "A"."0".$tambah;
-			}else (strlen($tambah) == 3);
-			$format = "A".$tambah
-				
+if (strlen($tambah) == 1) {
+    $format = "A" . "00" . $tambah;
+} else if (strlen($tambah) == 2) {
+    $format = "A" . "0" . $tambah;
+} else { // Default case untuk 3 digit
+    $format = "A" . $tambah;
+}
 ?>
 
-<section class="content-header">
-	<h1>
-		Master Data
-		<small>Data anggota</small>
-	</h1>
-	<ol class="breadcrumb">
-		<li>
-			<a href="index.php">
-				<i class="fa fa-home"></i>
-				<b>Si Perpustakaan</b>
-			</a>
-		</li>
-	</ol>
-</section>
+
 
 <section class="content">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-12 form-tambah-buku">
 			<!-- general form elements -->
 			<div class="box box-info">
 				<div class="box-header with-border">
@@ -83,6 +70,8 @@ $format = "A"."00".$tambah;
 				</form>
 			</div>
 			<!-- /.box -->
+		</div>
+	</div>
 </section>
 
 <?php

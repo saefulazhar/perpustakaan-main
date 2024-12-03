@@ -11,14 +11,6 @@
 	<h1>
 		Pengguna Sistem
 	</h1>
-	<ol class="breadcrumb">
-		<li>
-			<a href="index.php">
-				<i class="fa fa-home"></i>
-				<b>Si Tabsis</b>
-			</a>
-		</li>
-	</ol>
 </section>
 
 <section class="content">

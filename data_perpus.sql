@@ -40,10 +40,10 @@ CREATE TABLE `log_pinjam` (
 --
 
 INSERT INTO `log_pinjam` (`id_log`, `id_buku`, `id_anggota`, `tgl_pinjam`) VALUES
-(1, 'B001', 'A001', '2020-06-23'),
-(2, 'B002', 'A001', '2020-06-25'),
-(3, 'B003', 'A002', '2020-06-01'),
-(4, 'B002', 'A005', '2020-06-23');
+(1, 'B001', 'A001', '2024-11-23'),
+(2, 'B002', 'A001', '2024-11-25'),
+(3, 'B003', 'A002', '2024-12-01'),
+(4, 'B002', 'A005', '2024-11-23');
 
 -- --------------------------------------------------------
 
@@ -64,11 +64,11 @@ CREATE TABLE `tb_anggota` (
 --
 
 INSERT INTO `tb_anggota` (`id_anggota`, `nama`, `jekel`, `kelas`, `no_hp`) VALUES
-('A001', 'Ana', 'Perempuan', 'juwana', '089987789000'),
-('A002', 'Bagus', 'Laki-laki', 'demak', '089987789098'),
-('A003', 'Citra', 'Perempuan', 'demak', '085878526048'),
-('A004', 'Didik', 'Laki-laki', 'pati', '087789987654'),
-('A005', 'Edi', 'Laki-laki', 'demak', '089987789098');
+('A001', 'Ana', 'Perempuan', 'informatika', '089987789000'),
+('A002', 'Bagus', 'Laki-laki', 'informatika', '089987789098'),
+('A003', 'Citra', 'Perempuan', 'keperawatan', '085878526048'),
+('A004', 'Didik', 'Laki-laki', 'sistem informasi', '087789987654'),
+('A005', 'Edi', 'Laki-laki', 'sistem informasi', '089987789098');
 
 -- --------------------------------------------------------
 
@@ -89,10 +89,10 @@ CREATE TABLE `tb_buku` (
 --
 
 INSERT INTO `tb_buku` (`id_buku`, `judul_buku`, `pengarang`, `penerbit`, `th_terbit`) VALUES
-('B001', 'Matematika', 'anastasya', 'armi print', 2010),
+('B001', 'Matematika', 'anastasya', 'armi print', 2015),
 ('B002', 'RPL 2', 'Eko', 'UMK', 2020),
-('B003', 'C++', 'Anton', 'Toni Perc', 2010),
-('B004', 'CI 4', 'anastasya', 'armi print', 2009),
+('B003', 'C++', 'Anton', 'Toni Perc', 2018),
+('B004', 'CI 4', 'anastasya', 'armi print', 2017),
 ('B005', 'Data Mining', 'Anton', 'Toni Perc', 2020);
 
 -- --------------------------------------------------------
@@ -114,8 +114,8 @@ CREATE TABLE `tb_pengguna` (
 --
 
 INSERT INTO `tb_pengguna` (`id_pengguna`, `nama_pengguna`, `username`, `password`, `level`) VALUES
-(1, 'M ivan S', 'admin',md5('123'), 'Administrator'),
-(5, 'Mivan', 'ivan','123', 'Administrator');
+(1, 'Admin name', 'admin',md5('123'), 'Administrator'),
+(2, 'reza', 'reza','123', 'Administrator');
 
 -- --------------------------------------------------------
 
@@ -138,10 +138,10 @@ CREATE TABLE `tb_sirkulasi` (
 --
 
 INSERT INTO `tb_sirkulasi` (`id_sk`, `id_buku`, `id_anggota`, `tgl_pinjam`, `tgl_kembali`, `status`) VALUES
-('S001', 'B001', 'A001', '2020-06-23', '2020-06-30', 'KEM'),
-('S002', 'B002', 'A001', '2020-06-13', '2020-06-20', 'PIN'),
-('S003', 'B003', 'A002', '2020-06-22', '2020-06-29', 'PIN'),
-('S004', 'B002', 'A005', '2020-06-23', '2020-06-30', 'PIN');
+('S001', 'B001', 'A001', '2024-11-23', '2024-11-30', 'KEM'),
+('S002', 'B002', 'A001', '2024-11-13', '2024-11-20', 'PIN'),
+('S003', 'B003', 'A002', '2024-11-22', '2024-11-29', 'PIN'),
+('S004', 'B002', 'A005', '2024-11-23', '2024-11-30', 'PIN');
 
 --
 -- Indexes for dumped tables
