@@ -1,25 +1,25 @@
 <?php
 //kode 9 digit
   
-$carikode = mysqli_query($koneksi,"SELECT id_sk FROM tb_sirkulasi order by id_sk desc");
+$carikode = mysqli_query($koneksi,"SELECT id_sk FROM tb_peminjaman order by id_sk desc");
 $datakode = mysqli_fetch_array($carikode);
 $kode = $datakode['id_sk'];
 $urut = substr($kode, 1, 3);
 $tambah = (int) $urut + 1;
 
 if (strlen($tambah) == 1) {
-    $format = "S" . "00" . $tambah;
+    $format = "P" . "00" . $tambah;
 } else if (strlen($tambah) == 2) {
-    $format = "S" . "0" . $tambah;
+    $format = "P" . "0" . $tambah;
 } else { // else menangani strlen($tambah) == 3
-    $format = "S" . $tambah;
+    $format = "P" . $tambah;
 }
 
 ?>
 
 <section class="content-header">
 	<h1>
-		Sirkulasi
+		Peminjaman
 		<small>Buku</small>
 	</h1>
 </section>
@@ -37,7 +37,7 @@ if (strlen($tambah) == 1) {
 				<form action="" method="post" enctype="multipart/form-data">
 					<div class="box-body">
 						<div class="form-group">
-							<label>Id Sirkulasi</label>
+							<label>Id Pinjam</label>
 							<input type="text" name="id_sk" id="id_sk" class="form-control"
 								value="<?php echo $format; ?>" readonly />
 						</div>
@@ -48,7 +48,7 @@ if (strlen($tambah) == 1) {
 								<option selected="selected">-- Pilih --</option>
 								<?php
 								// ambil data dari database
-								$query = "select * from tb_anggota";
+								$query = "select * from tb_mahasiswa";
 								$hasil = mysqli_query($koneksi, $query);
 								while ($row = mysqli_fetch_array($hasil)) {
 								?>
@@ -111,7 +111,7 @@ if (strlen($tambah) == 1) {
 		$tgl_k=date('Y-m-d', strtotime('+7 days', strtotime($tgl_p)));
 		$tgl_hk=date('Y-m-d');
     
-        $sql_simpan = "INSERT INTO tb_sirkulasi (id_sk,id_buku,id_anggota,tgl_pinjam,status,tgl_kembali,tgl_dikembalikan) VALUES (
+        $sql_simpan = "INSERT INTO tb_peminjaman (id_sk,id_buku,id_anggota,tgl_pinjam,status,tgl_kembali,tgl_dikembalikan) VALUES (
            '".$_POST['id_sk']."',
           '".$_POST['id_buku']."',
           '".$_POST['id_anggota']."',

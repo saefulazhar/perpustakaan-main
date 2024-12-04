@@ -11,30 +11,30 @@
     <link rel="stylesheet" href="assets_style/assets/bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet"
         href="assets_style/assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css>">
-    <title>Laporan Perpustakaan - Laporan Sirkulasi</title>
+    <title>Laporan Perpustakaan - Laporan Peminjaman</title>
 </head>
 
 <body onload="window.print()" style="font-family: Quicksand, sans-serif;">
     <h3 class='text-center' style='font-family: Quicksand, sans-serif; margin-top: 30px;'>
         .:: Laporan Perpustakaan ::.
     </h3>
-    <h4 class='text-center'>Laporan Sirkulasi</h4>
+    <h4 class='text-center'>Laporan Peminjaman</h4>
     <?php
     // Load file koneksi.php
     include "inc/koneksi.php";
  
 
-    $sql=mysqli_query($koneksi,"SELECT tb_sirkulasi.id_buku, 
+    $sql=mysqli_query($koneksi,"SELECT tb_peminjaman.id_buku, 
     tb_buku.judul_buku, 
-    tb_anggota.id_anggota,
-    tb_anggota.nama,
-    tb_sirkulasi.id_sk,
-    tb_sirkulasi.tgl_pinjam,
-    tb_sirkulasi.tgl_kembali,
-    tb_sirkulasi.tgl_dikembalikan,
-        if(datediff(now( ) , tb_sirkulasi.tgl_kembali)<=0,0,datediff(now( ) , tb_sirkulasi.tgl_kembali) ) telat_pengembalian FROM tb_sirkulasi 
-        JOIN tb_anggota ON tb_anggota.id_anggota=tb_sirkulasi.id_anggota 
-        JOIN tb_buku ON tb_buku.id_buku=tb_sirkulasi.id_buku where tb_sirkulasi.status='KEM'
+    tb_mahasiswa.id_anggota,
+    tb_mahasiswa.nama,
+    tb_peminjaman.id_sk,
+    tb_peminjaman.tgl_pinjam,
+    tb_peminjaman.tgl_kembali,
+    tb_peminjaman.tgl_dikembalikan,
+        if(datediff(now( ) , tb_peminjaman.tgl_kembali)<=0,0,datediff(now( ) , tb_peminjaman.tgl_kembali) ) telat_pengembalian FROM tb_peminjaman 
+        JOIN tb_mahasiswa ON tb_mahasiswa.id_anggota=tb_peminjaman.id_anggota 
+        JOIN tb_buku ON tb_buku.id_buku=tb_peminjaman.id_buku where tb_peminjaman.status='KEM'
         Order By id_anggota");
     $no=null;
     $total_denda=null;
@@ -44,7 +44,7 @@
         <thead>
             <tr>
                 <th style="text-align: center;">No</th>
-                <th style="text-align: center;">ID SKL</th>
+                <th style="text-align: center;">ID Pinjam</th>
                 <th style="text-align: center;">Buku</th>
                 <th style="text-align: center;">Peminjam</th>
                 <th style="text-align: center;">Tgl Pinjam</th>

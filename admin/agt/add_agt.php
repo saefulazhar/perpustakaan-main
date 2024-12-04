@@ -1,11 +1,12 @@
 <?php
 //kode 9 digit
   
-$carikode = mysqli_query($koneksi, "SELECT id_anggota FROM tb_anggota ORDER BY id_anggota DESC");
+$carikode = mysqli_query($koneksi, "SELECT id_anggota FROM tb_mahasiswa ORDER BY id_anggota DESC");
 $datakode = mysqli_fetch_array($carikode);
 $kode = $datakode['id_anggota'];
-$urut = substr($kode, 1, 3);
+/*$urut = substr($kode, 1, 3);
 $tambah = (int) $urut + 1;
+
 
 if (strlen($tambah) == 1) {
     $format = "A" . "00" . $tambah;
@@ -13,7 +14,8 @@ if (strlen($tambah) == 1) {
     $format = "A" . "0" . $tambah;
 } else { // Default case untuk 3 digit
     $format = "A" . $tambah;
-}
+}*/
+$format = "";
 ?>
 
 
@@ -24,20 +26,20 @@ if (strlen($tambah) == 1) {
 			<!-- general form elements -->
 			<div class="box box-info">
 				<div class="box-header with-border">
-					<h3 class="box-title">Tambah anggota</h3>
+					<h3 class="box-title">Tambah Mahasiswa</h3>
 				</div>
 				<!-- /.box-header -->
 				<!-- form start -->
 				<form action="" method="post" enctype="multipart/form-data">
 					<div class="box-body">
 						<div class="form-group">
-							<label>ID anggota</label>
-							<input type="text" name="id_anggota" id="id_anggota" class="form-control" value="<?php echo $format; ?>"
-							 readonly/>
+							<label>ID Mahasiswa</label>
+							<input type="text" name="id_anggota" id="id_anggota" placeholder="NIM" class="form-control" value="<?php echo $format; ?>"
+							 />
 						</div>
 
 						<div class="form-group">
-							<label>Nama Anggota</label>
+							<label>Nama Mahasiswa</label>
 							<input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Anggota">
 						</div>
 
@@ -51,9 +53,23 @@ if (strlen($tambah) == 1) {
 						</div>
 
 						<div class="form-group">
-							<label>Kelas</label>
-							<input type="text" name="kelas" id="kelas" class="form-control" placeholder="Kelas">
+							<label>Prodi</label>
+							<select name="prodi" id="prodi" class="form-control" required>
+								<option>-- Pilih --</option>
+								<option>Informatika</option>
+								<option>Sistem Informasi</option>
+								<option>Akuntansi</option>
+								<option>Manajemen</option>
+								<option>Keperawatan</option>
+								<option>Kebidanan</option>
+								<option>Profesi Ners</option>
+							</select>
 						</div>
+
+						<!-- <div class="form-group">
+							<label>prodi</label>
+							<input type="text" name="prodi" id="prodi" class="form-control" placeholder="prodi">
+						</div> -->
 
 						<div class="form-group">
 							<label>No HP</label>
@@ -78,11 +94,11 @@ if (strlen($tambah) == 1) {
 
     if (isset ($_POST['Simpan'])){
     
-        $sql_simpan = "INSERT INTO tb_anggota (id_anggota,nama,jekel,kelas,no_hp) VALUES (
+        $sql_simpan = "INSERT INTO tb_mahasiswa (id_anggota,nama,jekel,prodi,no_hp) VALUES (
            '".$_POST['id_anggota']."',
           '".$_POST['nama']."',
           '".$_POST['jekel']."',
-          '".$_POST['kelas']."',
+          '".$_POST['prodi']."',
           '".$_POST['no_hp']."')";
         $query_simpan = mysqli_query($koneksi, $sql_simpan);
         mysqli_close($koneksi);

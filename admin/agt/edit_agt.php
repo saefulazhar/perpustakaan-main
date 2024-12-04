@@ -1,7 +1,7 @@
 <?php
 
     if(isset($_GET['kode'])){
-        $sql_cek = "SELECT * FROM tb_anggota WHERE id_anggota='".$_GET['kode']."'";
+        $sql_cek = "SELECT * FROM tb_mahasiswa WHERE id_anggota='".$_GET['kode']."'";
         $query_cek = mysqli_query($koneksi, $sql_cek);
         $data_cek = mysqli_fetch_array($query_cek,MYSQLI_BOTH);
     }
@@ -55,8 +55,8 @@
 						</div>
 
 						<div class="form-group">
-							<label>Kelas</label>
-							<input type='text' class="form-control" name="kelas" value="<?php echo $data_cek['kelas']; ?>"
+							<label>prodi</label>
+							<input type='text' class="form-control" name="prodi" value="<?php echo $data_cek['prodi']; ?>"
 							/>
 						</div>
 
@@ -82,10 +82,10 @@
 
 if (isset ($_POST['Ubah'])){
     //mulai proses ubah
-    $sql_ubah = "UPDATE tb_anggota SET
+    $sql_ubah = "UPDATE tb_mahasiswa SET
 		nama='".$_POST['nama']."',
 		jekel='".$_POST['jekel']."',
-		kelas='".$_POST['kelas']."',
+		prodi='".$_POST['prodi']."',
         no_hp='".$_POST['no_hp']."'
         WHERE id_anggota='".$_POST['id_anggota']."'";
     $query_ubah = mysqli_query($koneksi, $sql_ubah);

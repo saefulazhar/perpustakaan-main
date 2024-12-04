@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `data_perpus`
+-- Database: `university_library`
 --
 
 -- --------------------------------------------------------
@@ -48,22 +48,22 @@ INSERT INTO `log_pinjam` (`id_log`, `id_buku`, `id_anggota`, `tgl_pinjam`) VALUE
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_anggota`
+-- Struktur dari tabel `tb_mahasiswa`
 --
 
-CREATE TABLE `tb_anggota` (
+CREATE TABLE `tb_mahasiswa` (
   `id_anggota` varchar(10) NOT NULL,
   `nama` varchar(20) NOT NULL,
   `jekel` enum('Laki-laki','Perempuan') NOT NULL,
-  `kelas` varchar(50) NOT NULL,
+  `prodi` varchar(50) NOT NULL,
   `no_hp` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_anggota`
+-- Dumping data untuk tabel `tb_mahasiswa`
 --
 
-INSERT INTO `tb_anggota` (`id_anggota`, `nama`, `jekel`, `kelas`, `no_hp`) VALUES
+INSERT INTO `tb_mahasiswa` (`id_anggota`, `nama`, `jekel`, `prodi`, `no_hp`) VALUES
 ('A001', 'Ana', 'Perempuan', 'informatika', '089987789000'),
 ('A002', 'Bagus', 'Laki-laki', 'informatika', '089987789098'),
 ('A003', 'Citra', 'Perempuan', 'keperawatan', '085878526048'),
@@ -120,10 +120,10 @@ INSERT INTO `tb_pengguna` (`id_pengguna`, `nama_pengguna`, `username`, `password
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_sirkulasi`
+-- Struktur dari tabel `tb_peminjaman`
 --
 
-CREATE TABLE `tb_sirkulasi` (
+CREATE TABLE `tb_peminjaman` (
   `id_sk` varchar(20) NOT NULL,
   `id_buku` varchar(10) NOT NULL,
   `id_anggota` varchar(10) NOT NULL,
@@ -134,10 +134,10 @@ CREATE TABLE `tb_sirkulasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_sirkulasi`
+-- Dumping data untuk tabel `tb_peminjaman`
 --
 
-INSERT INTO `tb_sirkulasi` (`id_sk`, `id_buku`, `id_anggota`, `tgl_pinjam`, `tgl_kembali`, `status`) VALUES
+INSERT INTO `tb_peminjaman` (`id_sk`, `id_buku`, `id_anggota`, `tgl_pinjam`, `tgl_kembali`, `status`) VALUES
 ('S001', 'B001', 'A001', '2024-11-23', '2024-11-30', 'KEM'),
 ('S002', 'B002', 'A001', '2024-11-13', '2024-11-20', 'PIN'),
 ('S003', 'B003', 'A002', '2024-11-22', '2024-11-29', 'PIN'),
@@ -156,9 +156,9 @@ ALTER TABLE `log_pinjam`
   ADD KEY `id_buku` (`id_buku`);
 
 --
--- Indeks untuk tabel `tb_anggota`
+-- Indeks untuk tabel `tb_mahasiswa`
 --
-ALTER TABLE `tb_anggota`
+ALTER TABLE `tb_mahasiswa`
   ADD PRIMARY KEY (`id_anggota`);
 
 --
@@ -174,9 +174,9 @@ ALTER TABLE `tb_pengguna`
   ADD PRIMARY KEY (`id_pengguna`);
 
 --
--- Indeks untuk tabel `tb_sirkulasi`
+-- Indeks untuk tabel `tb_peminjaman`
 --
-ALTER TABLE `tb_sirkulasi`
+ALTER TABLE `tb_peminjaman`
   ADD PRIMARY KEY (`id_sk`),
   ADD KEY `id_buku` (`id_buku`),
   ADD KEY `id_anggota` (`id_anggota`);
@@ -205,15 +205,15 @@ ALTER TABLE `tb_pengguna`
 -- Ketidakleluasaan untuk tabel `log_pinjam`
 --
 ALTER TABLE `log_pinjam`
-  ADD CONSTRAINT `log_pinjam_ibfk_1` FOREIGN KEY (`id_anggota`) REFERENCES `tb_anggota` (`id_anggota`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `log_pinjam_ibfk_1` FOREIGN KEY (`id_anggota`) REFERENCES `tb_mahasiswa` (`id_anggota`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `log_pinjam_ibfk_2` FOREIGN KEY (`id_buku`) REFERENCES `tb_buku` (`id_buku`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `tb_sirkulasi`
+-- Ketidakleluasaan untuk tabel `tb_peminjaman`
 --
-ALTER TABLE `tb_sirkulasi`
+ALTER TABLE `tb_peminjaman`
   ADD CONSTRAINT `tb_sirkulasi_ibfk_1` FOREIGN KEY (`id_buku`) REFERENCES `tb_buku` (`id_buku`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_sirkulasi_ibfk_2` FOREIGN KEY (`id_anggota`) REFERENCES `tb_anggota` (`id_anggota`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `tb_sirkulasi_ibfk_2` FOREIGN KEY (`id_anggota`) REFERENCES `tb_mahasiswa` (`id_anggota`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

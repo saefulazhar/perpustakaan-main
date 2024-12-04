@@ -1,7 +1,7 @@
 <?php
 
     if(isset($_GET['kode'])){
-    $sql_ubah = "UPDATE tb_sirkulasi SET status='KEM' WHERE id_sk='".$_GET['kode']."'";
+    $sql_ubah = "UPDATE tb_peminjaman SET status='KEM' WHERE id_sk='".$_GET['kode']."'";
     $query_ubah = mysqli_query($koneksi, $sql_ubah);
 
     if ($query_ubah) {

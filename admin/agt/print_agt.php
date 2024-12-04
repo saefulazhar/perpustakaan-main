@@ -73,7 +73,7 @@ error_reporting(0);
 								<table class="table table-stripped">
 								<?php
 								
-								$sql = $koneksi->query("SELECT * FROM tb_anggota WHERE id_anggota='".$_GET['kode']."'");
+								$sql = $koneksi->query("SELECT * FROM tb_mahasiswa WHERE id_anggota='".$_GET['kode']."'");
                  				 while ($data= $sql->fetch_assoc()) {
 								
 								?>
@@ -99,10 +99,10 @@ error_reporting(0);
 										</td>
 									</tr>
 									<tr>
-										<td>Kelas</td>
+										<td>prodi</td>
 										<td>:</td>
 										<td>
-										<?php echo $data['kelas']; ?>
+										<?php echo $data['prodi']; ?>
 										</td>
 									</tr>
 									<tr>

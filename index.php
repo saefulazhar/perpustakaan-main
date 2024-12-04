@@ -122,7 +122,7 @@ include "inc/koneksi.php";
 							<li class="menu">
 									<a href="?page=MyApp/data_agt">
 									<ion-icon name="people"></ion-icon>
-									<span class="description">Kelola Anggota</span>
+									<span class="description">Kelola Mahasiswa</span>
 									<span class="pull-right-container">
 									</span>
 								</a>
@@ -141,7 +141,7 @@ include "inc/koneksi.php";
 							<li class="menu">
 								<a href="?page=laporan_sirkulasi">
 								<ion-icon name="document"></ion-icon>
-									<span class="description">Laporan Sirkulasi</span>
+									<span class="description">Laporan Peminjaman</span>
 									<span class="pull-right-container">
 									</span>
 								</a>
@@ -211,7 +211,7 @@ include "inc/koneksi.php";
 							<li class="menu">
 								<a href="?page=laporan_sirkulasi">
 								<ion-icon name="document"></ion-icon>
-									<span class="description">Laporan Sirkulasi</span>
+									<span class="description">Laporan Peminjaman</span>
 									<span class="pull-right-container">
 									</span>
 								</a>

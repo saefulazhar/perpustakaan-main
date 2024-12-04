@@ -2,7 +2,7 @@
 
 <section class="content-header">
 	<h1>
-		Kelola Anggota
+		Kelola Mahasiswa
 	</h1>
 </section>
 <!-- Main content -->
@@ -21,10 +21,10 @@
 					<thead>
 						<tr>
 							<th>No</th>
-							<th>Id Anggota</th>
+							<th>Id Mahasiswa</th>
 							<th>Nama</th>
 							<th>JK</th>
-							<th>Kelas</th>
+							<th>prodi</th>
 							<th>No HP</th>
 							<th>Aksi</th>
 						</tr>
@@ -33,7 +33,7 @@
 
 				<?php
                   $no = 1;
-                  $sql = $koneksi->query("SELECT * from tb_anggota");
+                  $sql = $koneksi->query("SELECT * from tb_mahasiswa");
                   while ($data= $sql->fetch_assoc()) {
                 ?>
 
@@ -51,7 +51,7 @@
 								<?php echo $data['jekel']; ?>
 							</td>
 							<td>
-								<?php echo $data['kelas']; ?>
+								<?php echo $data['prodi']; ?>
 							</td>
 							<td>
 								<?php echo $data['no_hp']; ?>
