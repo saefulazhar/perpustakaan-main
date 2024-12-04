@@ -1,0 +1,832 @@
+* {
+  font-family: "ubuntu", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* -------------- Login Page ----------------- */
+.login-bg {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 255, 0.4), rgba(0, 170, 255, 0.4)),
+    url(asset/image/background.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Logo instansi di pojok kiri atas */
+.logo-agency {
+  position: absolute;
+  top: 0px; /* Jarak dari atas */
+  left: 0px; /* Jarak dari kiri */
+  background: #fff; /* Warna latar logo */
+  padding: 10px 20px; /* Padding untuk memperluas area sekitar logo */
+  border-radius: 0 0 20px 0; /* Sudut kanan bawah melengkung */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+  z-index: 2; /* Tetap di atas background */
+}
+
+.logo-agency img {
+  width: auto; /* Ukuran logo */
+  height: 50px;
+  margin-right: 5px;
+}
+
+.login-box {
+  position: relative;
+  z-index: 3;
+  width: 420px;
+  height: auto;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+.login-title {
+  color: #006eed;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.login-box-body img {
+  width: 200px;
+  height: auto;
+}
+
+.login-box-msg {
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.input-box input {
+  width: 100%;
+  height: 50px; /* Sesuaikan dengan padding */
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 10px 20px; /* Sesuaikan */
+  box-sizing: border-box; /* Agar padding dihitung */
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  margin: 15px 0; /* Margin lebih kecil */
+}
+
+.input-box input::placeholder {
+  color: #fff;
+}
+
+.btn-wrapper .btn {
+  width: 100%;
+  height: 45px;
+  background: #006eed;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-wrapper .btn:hover {
+  filter: brightness(150%);
+}
+
+/* --------------- index page ---------------- */
+
+.main-sidebar {
+  position: fixed;
+  top: 0;
+  width: 260px;
+  height: 100dvh;
+  overflow-y: auto;
+  background-color: #fff;
+  padding: 24px;
+}
+
+.logo a {
+  text-decoration: none;
+}
+.logo-lg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.logo-lg img {
+  width: 100px;
+  height: auto;
+  margin: 0 0 10px;
+}
+
+.logo .judul-logo {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 16px;
+  text-align: center;
+  color: #006eed;
+  letter-spacing: 5px;
+}
+
+.user-panel {
+  display: flex;
+  background-color: #006eed;
+  border-radius: 5px;
+  align-items: center;
+  margin: 10px 0;
+}
+.img-circle {
+  width: 50px;
+  background-color: #d5e6f9;
+  border-radius: 50%;
+  margin: 10px 10px 5px 10px;
+}
+.user-name,
+.user-status {
+  color: #fff;
+}
+.user-status {
+  background-color: #d5e6f9;
+  border-radius: 25px;
+  padding: 3px 8px;
+  font-size: 12px;
+  color: #006eed;
+}
+
+.sidebar li {
+  list-style: none;
+}
+
+.sidebar .title {
+  margin-top: 10px;
+}
+
+/* Style dasar untuk menu */
+.menu a {
+  display: flex; /* Agar ikon dan deskripsi sejajar */
+  align-items: center;
+  text-decoration: none;
+  color: #006eed; /* Warna teks default */
+  background-color: #f5f5f5; /* Warna latar default */
+  border-radius: 5px;
+  padding: 10px 15px; /* Spasi internal */
+  margin: 3px 0;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Efek transisi */
+}
+
+/* Ikon default */
+.menu a ion-icon {
+  color: #006eed; /* Warna ikon default */
+  transition: color 0.3s ease; /* Efek transisi untuk warna */
+  font-size: 24px;
+}
+
+/* Deskripsi default */
+.menu a .description {
+  color: #006eed; /* Warna teks default */
+  margin-left: 5px;
+  transition: color 0.3s ease; /* Efek transisi untuk warna */
+}
+
+/* Efek hover pada menu */
+.menu a:hover {
+  background-color: #006eed; /* Ubah background menjadi biru */
+  color: #fff; /* Ubah teks menjadi putih */
+}
+
+/* Efek hover untuk ikon dan deskripsi */
+.menu a:hover ion-icon,
+.menu a:hover .description {
+  color: #fff; /* Ikon dan deskripsi berubah menjadi putih */
+}
+
+/* ------------------- content------------------------ */
+.content-wrapper {
+  flex-grow: 1; /* Konten utama mengambil ruang yang tersisa */
+  padding: 20px 20px 20px 328px;
+  overflow-y: auto; /* Konten utama bisa di-scroll */
+  background-image: url(asset/image/pattern.webp);
+  background-blend-mode: multiply;
+  background-color: #d5e6f9;
+}
+
+/* Style untuk content-header */
+.content-header {
+  background-color: #f4f6f9; /* Warna latar belakang lembut */
+  padding: 15px 20px; /* Padding untuk spasi di dalam elemen */
+  border-bottom: 1px solid #ddd; /* Garis bawah untuk pemisah */
+  margin-bottom: 20px; /* Jarak dengan elemen berikutnya */
+  border-radius: 5px; /* Sudut melengkung */
+}
+
+/* Style untuk judul <h1> di dalam content-header */
+.content-header h1 {
+  font-size: 24px; /* Ukuran font besar untuk judul */
+  color: #333; /* Warna teks */
+  margin: 0; /* Menghapus margin default */
+  font-weight: bold; /* Membuat teks lebih tebal */
+}
+
+/* Style untuk tampilan di perangkat kecil */
+@media (max-width: 768px) {
+  .content-header {
+    padding: 10px 15px; /* Mengurangi padding untuk layar kecil */
+  }
+
+  .content-header h1 {
+    font-size: 20px; /* Ukuran font lebih kecil */
+  }
+}
+
+/* ----------------------- dashboard --------------------- */
+/* Style untuk card */
+.small-box {
+  position: relative;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+  padding: 20px; /* Spasi internal */
+  overflow: hidden; /* Menghindari konten meluap */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek transisi */
+  display: flex;
+  flex-direction: column; /* Ubah orientasi menjadi vertikal */
+  align-items: center; /* Pusatkan secara horizontal */
+  width: 220px;
+  height: 170px;
+}
+
+/* Hover effect untuk card */
+.small-box:hover {
+  transform: translateY(-5px); /* Card naik sedikit */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Bayangan lebih kuat */
+}
+
+/* Style untuk bagian konten (inner) */
+/* Mengatur layout horizontal */
+.small-box .inner {
+  display: flex;
+  justify-content: center; /* Jarak antar elemen */
+  align-items: center; /* Rata vertikal */
+  text-align: center; /* Teks rata kiri */
+}
+
+/* Gaya untuk teks */
+.small-box .inner .text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Isi ruang yang tersedia */
+  width: 120px;
+  height: 100px;
+  justify-content: space-around;
+}
+
+.small-box .inner .text h4 {
+  font-size: 3rem; /* Ukuran heading */
+  font-weight: bold;
+  margin: 0; /* Hilangkan margin */
+  color: #333; /* Warna teks */
+}
+
+.small-box .inner .text p {
+  font-size: 1rem; /* Ukuran paragraf */
+  margin: 5px 0 0; /* Jarak antara heading dan paragraf */
+  color: #666; /* Warna teks abu-abu */
+}
+
+/* Gaya untuk ikon */
+.small-box .inner ion-icon {
+  font-size: 80px; /* Ukuran ikon */
+  color: #007bff; /* Warna ikon */
+  margin-left: 15px; /* Jarak ikon dengan teks */
+}
+
+/* Style untuk tombol footer */
+.small-box-footer {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 50px;
+  text-align: center;
+  background-color: #f5f5f5; /* Warna latar belakang abu-abu terang */
+  border: 1px solid #ddd;
+  border-radius: 5px; /* Sudut melengkung */
+  color: #007bff; /* Warna teks biru */
+  text-decoration: none; /* Hilangkan garis bawah */
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Efek transisi */
+}
+
+.small-box-footer:hover {
+  background-color: #007bff; /* Warna biru saat hover */
+  color: #fff; /* Teks putih saat hover */
+}
+
+/* Variasi warna card berdasarkan kategori */
+.bg-blue {
+  border-top: 5px solid #007bff; /* Indikator warna */
+}
+
+.bg-yellow {
+  border-top: 5px solid #ffc107;
+}
+
+.bg-green {
+  border-top: 5px solid #28a745;
+}
+
+.bg-red {
+  border-top: 5px solid #dc3545;
+}
+
+/* Container grid untuk card */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Atur grid responsif */
+  gap: 20px; /* Jarak antar card */
+  padding: 20px; /* Tambahkan padding di sekitar grid */
+  justify-items: center; /* Pusatkan item dalam grid */
+}
+
+/* ----------------------- Table ----------------------- */
+/* General table styling */
+
+.box {
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.box-header {
+  margin: 10px 0 20px 0;
+}
+
+/* Styling untuk kontainer dropdown dan filter */
+.col-sm-6 {
+  display: inline-block;
+  margin: 10px 50px 10px 0;
+}
+
+/* Styling untuk label */
+.col-sm-6 label {
+  font-size: 14px; /* Ukuran font label */
+  font-weight: 500; /* Tebal font */
+  color: #333; /* Warna teks */
+  margin-right: 10px; /* Jarak antara label dan elemen */
+}
+
+/* Styling untuk dropdown select */
+.dataTables_length select {
+  width: auto;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.dataTables_length select:focus {
+  outline: none;
+  border-color: #007bff; /* Warna fokus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Styling untuk input pencarian */
+.dataTables_filter input {
+  width: 100%;
+  max-width: 250px; /* Batas lebar maksimum */
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.dataTables_filter input:focus {
+  outline: none;
+  border-color: #007bff; /* Warna fokus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Styling placeholder */
+.dataTables_filter input::placeholder {
+  font-style: italic;
+  color: #aaa;
+}
+
+/* Responsive untuk tampilan kecil */
+@media (max-width: 768px) {
+  .col-sm-6 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dataTables_length,
+  .dataTables_filter {
+    width: 100%;
+  }
+
+  .dataTables_filter input {
+    max-width: 100%; /* Full width untuk mobile */
+  }
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: "ubuntu", sans-serif;
+  font-size: 14px;
+  color: #333;
+  /* background-color: #f9f9f9; */
+}
+
+/* Table header styling */
+.table thead {
+  background-color: #006eed;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+.table th {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+/* Table body styling */
+.table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Alternate row colors */
+.table tbody tr:nth-child(odd) {
+  background-color: #d5e6f9;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+/* Row hover effect */
+.table tbody tr:hover {
+  background-color: rgb(140, 206, 254);
+}
+
+/* Responsive table */
+.table-responsive {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+/* label style */
+/* Style umum untuk label */
+.label {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+/* Style untuk label-primary (masa peminjaman) */
+.label-primary {
+  background-color: #007bff; /* Warna biru */
+  border: 1px solid #0056b3; /* Border biru gelap */
+}
+
+/* Style untuk label-danger (denda) */
+.label-danger {
+  background-color: #dc3545; /* Warna merah */
+  border: 1px solid #b21f2d; /* Border merah gelap */
+}
+
+/* -------- Button styling -------- */
+.btn {
+  padding: 12px 8px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  color: #fff;
+}
+
+/* General button styling */
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-right: 2px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* Button colors */
+.btn-success {
+  background-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Ionicons size and alignment */
+.btn-action ion-icon {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+/* Icon alignment */
+
+.icon-top {
+  font-size: 24px;
+  position: relative;
+  top: 7px;
+  margin-right: 5px;
+  color: #fff;
+}
+
+ion-icon {
+  font-size: 18px;
+}
+
+/* Button LOg */
+/* CSS for Buttons */
+
+.btn-log {
+  margin: 10px 0; /* Spasi antar tombol */
+  display: inline-flex;
+}
+
+.btn-log a {
+  display: inline-flex; /* Menyusun ikon dan teks secara horizontal */
+  align-items: center; /* Memposisikan konten di tengah secara vertikal */
+  text-decoration: none; /* Menghilangkan garis bawah pada teks */
+  color: #fff; /* Warna teks */
+  font-weight: bold; /* Teks tebal */
+  padding: 10px 15px; /* Spasi di dalam tombol */
+  border-radius: 5px; /* Sudut melengkung */
+  transition: background-color 0.3s; /* Animasi transisi */
+}
+
+/* Tombol Log Pinjam */
+.btn-pinjam {
+  background-color: #4caf50; /* Warna hijau */
+}
+
+.btn-pinjam:hover {
+  background-color: #45a049; /* Warna saat hover */
+}
+
+/* Tombol Log Kembali */
+.btn-kembali {
+  background-color: #2196f3; /* Warna biru */
+}
+
+.btn-kembali:hover {
+  background-color: #1e87e5; /* Warna saat hover */
+}
+
+.icon-log {
+  margin-right: 8px; /* Spasi antara ikon dan teks */
+  font-size: 18px; /* Ukuran ikon */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .table th,
+  .table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+/* ------ pagination styles ------ */
+.col-sm-5 {
+  display: flex;
+  justify-content: center;
+}
+
+.dataTables_paginate .pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 10px 0;
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #333;
+}
+
+.pagination a:hover {
+  background-color: 1 #f0f0f0;
+}
+
+.pagination .active a {
+  background-color: #006eed;
+  color: #fff;
+}
+
+.pagination .disabled a {
+  color: #ccc;
+  cursor: not-linked;
+}
+
+/* ----- add page style ----- */
+/* Styling untuk form Tambah Buku */
+/* .form-tambah-buku .box {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+} */
+
+.form-tambah-buku .box-header {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+.form-tambah-buku .box-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  /* text-align: center; */
+}
+
+.form-tambah-buku .form-group {
+  margin-bottom: 15px;
+}
+
+.form-tambah-buku label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-tambah-buku .form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-tambah-buku .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.form-tambah-buku .btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-tambah-buku .btn-info {
+  background-color: #007bff;
+}
+
+.form-tambah-buku .btn-info:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.form-tambah-buku .btn-warning {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.form-tambah-buku .btn-warning:hover {
+  background-color: #e0a800;
+  transform: scale(1.05);
+}
+
+.form-tambah-buku .box-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .form-tambah-buku .box {
+    padding: 15px;
+  }
+
+  .form-tambah-buku .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-tambah-buku .box-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ------- note peminjaman -------- */
+.note {
+  background-color: #f9f9f9; /* Warna latar belakang */
+  border: 1px solid #ccc; /* Border tipis */
+  padding: 15px; /* Ruang di dalam */
+  border-radius: 5px; /* Sudut melengkung */
+  font-family: Arial, sans-serif; /* Gaya font */
+  font-size: 14px; /* Ukuran font */
+  line-height: 1.6; /* Jarak antar baris */
+  margin-top: 10px; /* Jarak atas */
+}
+
+.note .highlight {
+  color: red; /* Warna teks */
+  font-weight: bold; /* Cetak tebal */
+}
