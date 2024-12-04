@@ -24,17 +24,17 @@
     include "inc/koneksi.php";
  
 
-    $sql=mysqli_query($koneksi,"SELECT tb_sirkulasi.id_buku, 
+    $sql=mysqli_query($koneksi,"SELECT tb_peminjaman.id_buku, 
     tb_buku.judul_buku, 
-    tb_anggota.id_anggota,
-    tb_anggota.nama,
-    tb_sirkulasi.id_sk,
-    tb_sirkulasi.tgl_pinjam,
-    tb_sirkulasi.tgl_kembali,
-    tb_sirkulasi.tgl_dikembalikan,
-        if(datediff(now( ) , tb_sirkulasi.tgl_kembali)<=0,0,datediff(now( ) , tb_sirkulasi.tgl_kembali) ) telat_pengembalian FROM tb_sirkulasi 
-        JOIN tb_anggota ON tb_anggota.id_anggota=tb_sirkulasi.id_anggota 
-        JOIN tb_buku ON tb_buku.id_buku=tb_sirkulasi.id_buku where tb_sirkulasi.status='KEM'
+    tb_mahasiswa.id_anggota,
+    tb_mahasiswa.nama,
+    tb_peminjaman.id_sk,
+    tb_peminjaman.tgl_pinjam,
+    tb_peminjaman.tgl_kembali,
+    tb_peminjaman.tgl_dikembalikan,
+        if(datediff(now( ) , tb_peminjaman.tgl_kembali)<=0,0,datediff(now( ) , tb_peminjaman.tgl_kembali) ) telat_pengembalian FROM tb_peminjaman 
+        JOIN tb_mahasiswa ON tb_mahasiswa.id_anggota=tb_peminjaman.id_anggota 
+        JOIN tb_buku ON tb_buku.id_buku=tb_peminjaman.id_buku where tb_peminjaman.status='KEM'
         Order By id_anggota");
     $no=null;
     $total_denda=null;

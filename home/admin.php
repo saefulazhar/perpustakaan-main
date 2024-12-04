@@ -7,7 +7,7 @@
 ?>
 
 <?php
-	$sql = $koneksi->query("SELECT count(id_anggota) as agt from tb_anggota");
+	$sql = $koneksi->query("SELECT count(id_anggota) as agt from tb_mahasiswa");
 	while ($data= $sql->fetch_assoc()) {
 	
 		$agt=$data['agt'];
@@ -15,7 +15,7 @@
 ?>
 
 <?php
-	$sql = $koneksi->query("SELECT count(id_sk) as pin from tb_sirkulasi where status='PIN'");
+	$sql = $koneksi->query("SELECT count(id_sk) as pin from tb_peminjaman where status='PIN'");
 	while ($data= $sql->fetch_assoc()) {
 	
 		$pin=$data['pin'];
@@ -23,7 +23,7 @@
 ?>
 
 <?php
-	$sql = $koneksi->query("SELECT count(id_sk) as kem from tb_sirkulasi where status='KEM'");
+	$sql = $koneksi->query("SELECT count(id_sk) as kem from tb_peminjaman where status='KEM'");
 	while ($data= $sql->fetch_assoc()) {
 	
 		$kem=$data['kem'];
@@ -31,7 +31,7 @@
 ?>
 
 <?php
-	$sql = $koneksi->query("SELECT count(id_sk) as kem from tb_sirkulasi where status='KEM'");
+	$sql = $koneksi->query("SELECT count(id_sk) as kem from tb_peminjaman where status='KEM'");
 	while ($data= $sql->fetch_assoc()) {
 	
 		$kem=$data['kem'];

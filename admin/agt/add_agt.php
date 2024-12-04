@@ -1,7 +1,7 @@
 <?php
 //kode 9 digit
   
-$carikode = mysqli_query($koneksi, "SELECT id_anggota FROM tb_anggota ORDER BY id_anggota DESC");
+$carikode = mysqli_query($koneksi, "SELECT id_anggota FROM tb_mahasiswa ORDER BY id_anggota DESC");
 $datakode = mysqli_fetch_array($carikode);
 $kode = $datakode['id_anggota'];
 $urut = substr($kode, 1, 3);
@@ -51,8 +51,8 @@ if (strlen($tambah) == 1) {
 						</div>
 
 						<div class="form-group">
-							<label>Kelas</label>
-							<input type="text" name="kelas" id="kelas" class="form-control" placeholder="Kelas">
+							<label>prodi</label>
+							<input type="text" name="prodi" id="prodi" class="form-control" placeholder="prodi">
 						</div>
 
 						<div class="form-group">
@@ -78,11 +78,11 @@ if (strlen($tambah) == 1) {
 
     if (isset ($_POST['Simpan'])){
     
-        $sql_simpan = "INSERT INTO tb_anggota (id_anggota,nama,jekel,kelas,no_hp) VALUES (
+        $sql_simpan = "INSERT INTO tb_mahasiswa (id_anggota,nama,jekel,prodi,no_hp) VALUES (
            '".$_POST['id_anggota']."',
           '".$_POST['nama']."',
           '".$_POST['jekel']."',
-          '".$_POST['kelas']."',
+          '".$_POST['prodi']."',
           '".$_POST['no_hp']."')";
         $query_simpan = mysqli_query($koneksi, $sql_simpan);
         mysqli_close($koneksi);

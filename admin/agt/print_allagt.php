@@ -21,7 +21,7 @@
     include "inc/koneksi.php";
  
 
-        $query = "SELECT * from tb_anggota"; // Tampilkan semua data anggota 
+        $query = "SELECT * from tb_mahasiswa"; // Tampilkan semua data anggota 
     
     ?>
     <table class="table table-striped table-bordered">
@@ -31,7 +31,7 @@
       <th  style="text-align: center;">ID Anggota</th>      
       <th  style="text-align: center;">Nama</th>
       <th  style="text-align: center;">Jenis Kelamin</th>
-      <th  style="text-align: center;">Kelas</th>
+      <th  style="text-align: center;">prodi</th>
       <th  style="text-align: center;">No Telepon</th>
     </tr>
     <?php
@@ -50,7 +50,7 @@
                 echo "<td>" . $data['id_anggota'] . "</td>";
                 echo "<td>" . $data['nama'] . "</td>";
                 echo "<td>" . $data['jekel']. "</td>";
-                echo "<td>" . $data['kelas'] . "</td>";
+                echo "<td>" . $data['prodi'] . "</td>";
                 echo "<td>" . $data['no_hp'] . "</td>";
 
                 echo "</tr>";

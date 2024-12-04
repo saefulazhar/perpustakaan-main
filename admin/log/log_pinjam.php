@@ -34,7 +34,7 @@
                   $no = 1;
                   $sql = $koneksi->query("SELECT b.judul_buku, a.id_anggota, a.nama, l.tgl_pinjam
                   from log_pinjam l inner join tb_buku b on l.id_buku=b.id_buku
-				  inner join tb_anggota a on l.id_anggota=a.id_anggota order by tgl_pinjam asc");
+				  inner join tb_mahasiswa a on l.id_anggota=a.id_anggota order by tgl_pinjam asc");
                   while ($data= $sql->fetch_assoc()) {
                 ?>
 
