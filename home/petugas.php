@@ -7,15 +7,15 @@
 ?>
 
 <?php
-	$sql = $koneksi->query("SELECT count(id_anggota) as agt from tb_mahasiswa");
+	$sql = $koneksi->query("SELECT count(nim) as mahasiswa from tb_mahasiswa");
 	while ($data= $sql->fetch_assoc()) {
 	
-		$agt=$data['agt'];
+		$mahasiswa=$data['mahasiswa'];
 	}
 ?>
 
 <?php
-	$sql = $koneksi->query("SELECT count(id_sk) as pin from tb_peminjaman where status='PIN'");
+	$sql = $koneksi->query("SELECT count(id_pinjam) as pin from tb_peminjaman where status='PIN'");
 	while ($data= $sql->fetch_assoc()) {
 	
 		$pin=$data['pin'];
@@ -23,7 +23,7 @@
 ?>
 
 <?php
-	$sql = $koneksi->query("SELECT count(id_sk) as kem from tb_peminjaman where status='KEM'");
+	$sql = $koneksi->query("SELECT count(id_pinjam) as kem from tb_peminjaman where status='KEM'");
 	while ($data= $sql->fetch_assoc()) {
 	
 		$kem=$data['kem'];
@@ -68,15 +68,15 @@
 				<div class="inner">
 					<div class="text">
 						<h4>
-							<?= $agt; ?>
+							<?= $mahasiswa; ?>
 						</h4>
-						<p>Jumlah Anggota</p>
+						<p>Jumlah Mahasiswa</p>
 					</div>
 					<div class="icon">
 					<ion-icon name="people"></ion-icon>
 					</div>
 				</div>
-				<a href="?page=MyApp/data_agt" class="small-box-footer">More info
+				<a href="?page=MyApp/data_mahasiswa" class="small-box-footer">More info
 				</a>
 			</div>
 		</div>
@@ -95,7 +95,7 @@
 					<ion-icon name="swap-vertical"></ion-icon>
 					</div>
 				</div>
-				<a href="?page=data_sirkul" class="small-box-footer">More info
+				<a href="?page=data_peminjaman" class="small-box-footer">More info
 				</a>
 			</div>
 		</div>
@@ -108,7 +108,7 @@
 						<h4>
 							<?= $kem; ?>
 						</h4>
-						<p>Laporan Sirkulasi</p>
+						<p>Laporan Peminjaman</p>
 					</div>
 					<div class="icon">
 					<ion-icon name="document"></ion-icon>

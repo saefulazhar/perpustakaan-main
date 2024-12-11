@@ -9,19 +9,17 @@
 
 <section class="content-header">
 	<h1>
-		Master Data
-		<small>Data Buku</small>
+		Kelola Buku
 	</h1>
-
 </section>
 
 <section class="content">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-12 form-style">
 			<!-- general form elements -->
 			<div class="box box-success">
-				<div class="box-header with-border">
-					<h3 class="box-title">Ubah buku</h3>
+				<div class="box-header ">
+					<h3 class="box-title">Ubah Data Buku</h3>
 				</div>
 				<!-- /.box-header -->
 				<!-- form start -->

@@ -6,7 +6,7 @@
 <!-- Main content -->
 <section class="content">
 	<div class="box box-primary">
-		<div class="box-header with-border">
+		<div class="box-header ">
 			<a href="?page=MyApp/add_buku" title="Tambah Data" class="btn btn-primary">
 			<ion-icon name="add-circle" class="icon-top"></ion-icon>Tambah Data</a>
 		</div>

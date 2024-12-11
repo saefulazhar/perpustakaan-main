@@ -1,7 +1,7 @@
 <?php
 
     if(isset($_GET['kode'])){
-        $sql_cek = "SELECT * FROM tb_peminjaman WHERE id_sk='".$_GET['kode']."'";
+        $sql_cek = "SELECT * FROM tb_peminjaman WHERE id_pinjam='".$_GET['kode']."'";
         $query_cek = mysqli_query($koneksi, $sql_cek);
         $data_cek = mysqli_fetch_array($query_cek,MYSQLI_BOTH);
     }
@@ -15,7 +15,7 @@
     $sql_ubah = "UPDATE tb_peminjaman SET
         tgl_pinjam='$tgl_pp',
         tgl_kembali='$tgl_kk'
-        WHERE id_sk='".$_GET['kode']."'";
+        WHERE id_pinjam='".$_GET['kode']."'";
     $query_ubah = mysqli_query($koneksi, $sql_ubah);
 
     if ($query_ubah) {
@@ -23,7 +23,7 @@
         Swal.fire({title: 'Perpanjang Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
         }).then((result) => {
             if (result.value) {
-                window.location = 'index.php?page=data_sirkul';
+                window.location = 'index.php?page=data_peminjaman';
             }
         })</script>";
         }else{
@@ -31,7 +31,7 @@
         Swal.fire({title: 'Perpanjang Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
         }).then((result) => {
             if (result.value) {
-                window.location = 'index.php?page=data_sirkul';
+                window.location = 'index.php?page=data_peminjaman';
             }
         })</script>";
     }

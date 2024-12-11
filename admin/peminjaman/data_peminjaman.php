@@ -12,8 +12,8 @@
 <!-- Main content -->
 <section class="content">
 	<div class="box box-primary">
-		<div class="box-header with-border">
-			<a href="?page=add_sirkul" title="Tambah Data" class="btn btn-primary">
+		<div class="box-header ">
+			<a href="?page=add_peminjaman" title="Tambah Data" class="btn btn-primary">
 			<ion-icon name="add-circle" class="icon-top"></ion-icon>Tambah Data</a>
 		</div>
 		<!-- /.box-header -->
@@ -36,13 +36,13 @@
 
 						<?php
 						$no = 1;
-						$sql = $koneksi->query("SELECT s.id_sk, b.judul_buku,
-				  a.id_anggota,
+						$sql = $koneksi->query("SELECT s.id_pinjam, b.judul_buku,
+				  a.nim,
 				  a.nama,
 				  s.tgl_pinjam, 
 				  s.tgl_kembali
                   from tb_peminjaman s inner join tb_buku b on s.id_buku=b.id_buku
-				  inner join tb_mahasiswa a on s.id_anggota=a.id_anggota where status='PIN' order by tgl_pinjam desc");
+				  inner join tb_mahasiswa a on s.nim=a.nim where status='PIN' order by tgl_pinjam desc");
 						while ($data = $sql->fetch_assoc()) {
 						?>
 
@@ -51,13 +51,13 @@
 									<?php echo $no++; ?>
 								</td>
 								<td>
-									<?php echo $data['id_sk']; ?>
+									<?php echo $data['id_pinjam']; ?>
 								</td>
 								<td>
 									<?php echo $data['judul_buku']; ?>
 								</td>
 								<td>
-									<?php echo $data['id_anggota']; ?>
+									<?php echo $data['nim']; ?>
 									-
 									<?php echo $data['nama']; ?>
 								</td>
@@ -109,10 +109,10 @@
 							<?php } ?>
 
 							<td>
-								<a href="?page=panjang&kode=<?php echo $data['id_sk']; ?>" onclick="return confirm('Perpanjang Data Ini ?')" title="Perpanjang" class="btn-success btn-action">
+								<a href="?page=panjang&kode=<?php echo $data['id_pinjam']; ?>" onclick="return confirm('Perpanjang Data Ini ?')" title="Perpanjang" class="btn-success btn-action">
 								<ion-icon name="arrow-up" style="font-size: 16px;"></ion-icon>
 								</a>
-								<a href="?page=kembali&kode=<?php echo $data['id_sk']; ?>" onclick="return confirm('Kembalikan Buku Ini ?')" title="Kembalikan" class="btn-danger btn-action">
+								<a href="?page=kembali&kode=<?php echo $data['id_pinjam']; ?>" onclick="return confirm('Kembalikan Buku Ini ?')" title="Kembalikan" class="btn-danger btn-action">
 								<ion-icon name="arrow-down" style="font-size: 16px;"></ion-icon>
 								</a>
 							</td>

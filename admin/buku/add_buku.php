@@ -16,13 +16,18 @@ $format = "B"."00".$tambah;
 				
 ?>
 
+<section class="content-header">
+	<h1>
+		Kelola Buku
+	</h1>
+</section>
 
 <section class="content">
 	<div class="row">
-		<div class="col-md-12 form-tambah-buku">
+		<div class="col-md-12 form-style">
 			<!-- general form elements -->
 			<div class="box box-info">
-				<div class="box-header with-border">
+				<div class="box-header ">
 					<h3 class="box-title">Tambah Buku</h3>
 				</div>
 				<!-- /.box-header -->

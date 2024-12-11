@@ -708,34 +708,26 @@ ion-icon {
   cursor: not-linked;
 }
 
-/* ----- add page style ----- */
-/* Styling untuk form Tambah Buku */
-/* .form-tambah-buku .box {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-} */
+/* ----- add & edit page style ----- */
 
-.form-tambah-buku .box-header {
+.form-style .box-header {
   border-bottom: 1px solid #ddd;
   margin-bottom: 15px;
   padding-bottom: 10px;
 }
 
-.form-tambah-buku .box-title {
+.form-style .box-title {
   font-size: 20px;
   font-weight: bold;
   color: #333;
   /* text-align: center; */
 }
 
-.form-tambah-buku .form-group {
+.form-style .form-group {
   margin-bottom: 15px;
 }
 
-.form-tambah-buku label {
+.form-style label {
   font-size: 14px;
   font-weight: 600;
   color: #333;
@@ -743,7 +735,7 @@ ion-icon {
   display: block;
 }
 
-.form-tambah-buku .form-control {
+.form-style .form-control {
   width: 100%;
   padding: 10px;
   font-size: 14px;
@@ -755,13 +747,13 @@ ion-icon {
   box-sizing: border-box;
 }
 
-.form-tambah-buku .form-control:focus {
+.form-style .form-control:focus {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   outline: none;
 }
 
-.form-tambah-buku .btn {
+.form-style .btn {
   padding: 10px 20px;
   font-size: 14px;
   font-weight: 600;
@@ -772,26 +764,26 @@ ion-icon {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.form-tambah-buku .btn-info {
+.form-style .btn-info {
   background-color: #007bff;
 }
 
-.form-tambah-buku .btn-info:hover {
+.form-style .btn-info:hover {
   background-color: #0056b3;
   transform: scale(1.05);
 }
 
-.form-tambah-buku .btn-warning {
+.form-style .btn-warning {
   background-color: #ffc107;
   color: #333;
 }
 
-.form-tambah-buku .btn-warning:hover {
+.form-style .btn-warning:hover {
   background-color: #e0a800;
   transform: scale(1.05);
 }
 
-.form-tambah-buku .box-footer {
+.form-style .box-footer {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
@@ -799,16 +791,16 @@ ion-icon {
 }
 
 @media (max-width: 768px) {
-  .form-tambah-buku .box {
+  .form-style .box {
     padding: 15px;
   }
 
-  .form-tambah-buku .btn {
+  .form-style .btn {
     width: 100%;
     text-align: center;
   }
 
-  .form-tambah-buku .box-footer {
+  .form-style .box-footer {
     flex-direction: column;
     align-items: stretch;
   }
@@ -829,4 +821,130 @@ ion-icon {
 .note .highlight {
   color: red; /* Warna teks */
   font-weight: bold; /* Cetak tebal */
+}
+
+h1,
+h2 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* --------------------- Print Report Styles -------------------- */
+#print-area {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.report-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.report-subtitle {
+  font-size: 18px;
+  font-weight: normal;
+  color: #666;
+}
+
+/* Table Styles */
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.report-table th,
+.report-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.report-table th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+.report-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.report-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.no-data {
+  text-align: center;
+  font-style: italic;
+  color: #999;
+}
+
+.total-row td {
+  font-weight: bold;
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Button Styles */
+.print-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.print-button:hover {
+  background-color: #0056b3;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+  #print-area,
+  #print-area * {
+    visibility: visible;
+  }
+  #print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: none; /* Hilangkan border */
+    margin: 0 auto; /* Tengah-kan */
+  }
+  .print-button {
+    display: none;
+  }
+
+  table {
+    width: 100%; /* Pastikan tabel terisi penuh */
+    border-collapse: collapse;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid black; /* Pastikan tabel tetap terlihat saat dicetak */
+  }
+
+  .no-print {
+    display: none; /* Sembunyikan elemen yang tidak perlu dicetak */
+  }
 }

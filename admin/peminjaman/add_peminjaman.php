@@ -1,9 +1,9 @@
 <?php
 //kode 9 digit
   
-$carikode = mysqli_query($koneksi,"SELECT id_sk FROM tb_peminjaman order by id_sk desc");
+$carikode = mysqli_query($koneksi,"SELECT id_pinjam FROM tb_peminjaman order by id_pinjam desc");
 $datakode = mysqli_fetch_array($carikode);
-$kode = $datakode['id_sk'];
+$kode = $datakode['id_pinjam'];
 $urut = substr($kode, 1, 3);
 $tambah = (int) $urut + 1;
 
@@ -26,10 +26,10 @@ if (strlen($tambah) == 1) {
 
 <section class="content">
 	<div class="row">
-		<div class="col-md-12 form-tambah-buku">
+		<div class="col-md-12 form-style">
 			<!-- general form elements -->
 			<div class="box box-info">
-				<div class="box-header with-border">
+				<div class="box-header ">
 					<h3 class="box-title">Tambah Peminjaman</h3>
 				</div>
 				<!-- /.box-header -->
@@ -38,13 +38,13 @@ if (strlen($tambah) == 1) {
 					<div class="box-body">
 						<div class="form-group">
 							<label>Id Pinjam</label>
-							<input type="text" name="id_sk" id="id_sk" class="form-control"
+							<input type="text" name="id_pinjam" id="id_pinjam" class="form-control"
 								value="<?php echo $format; ?>" readonly />
 						</div>
 
 						<div class="form-group">
 							<label>Nama Peminjam</label>
-							<select name="id_anggota" id="id_anggota" class="form-control select2" style="width: 100%;">
+							<select name="nim" id="nim" class="form-control select2" style="width: 100%;">
 								<option selected="selected">-- Pilih --</option>
 								<?php
 								// ambil data dari database
@@ -52,8 +52,8 @@ if (strlen($tambah) == 1) {
 								$hasil = mysqli_query($koneksi, $query);
 								while ($row = mysqli_fetch_array($hasil)) {
 								?>
-								<option value="<?php echo $row['id_anggota'] ?>">
-									<?php echo $row['id_anggota'] ?>
+								<option value="<?php echo $row['nim'] ?>">
+									<?php echo $row['nim'] ?>
 									-
 									<?php echo $row['nama'] ?>
 								</option>
@@ -94,7 +94,7 @@ if (strlen($tambah) == 1) {
 
 					<div class="box-footer">
 						<input type="submit" name="Simpan" value="Simpan" class="btn btn-info">
-						<a href="?page=data_sirkul" class="btn btn-warning">Batal</a>
+						<a href="?page=data_peminjaman" class="btn btn-warning">Batal</a>
 					</div>
 				</form>
 			</div>
@@ -111,17 +111,17 @@ if (strlen($tambah) == 1) {
 		$tgl_k=date('Y-m-d', strtotime('+7 days', strtotime($tgl_p)));
 		$tgl_hk=date('Y-m-d');
     
-        $sql_simpan = "INSERT INTO tb_peminjaman (id_sk,id_buku,id_anggota,tgl_pinjam,status,tgl_kembali,tgl_dikembalikan) VALUES (
-           '".$_POST['id_sk']."',
+        $sql_simpan = "INSERT INTO tb_peminjaman (id_pinjam,id_buku,nim,tgl_pinjam,status,tgl_kembali,tgl_dikembalikan) VALUES (
+           '".$_POST['id_pinjam']."',
           '".$_POST['id_buku']."',
-          '".$_POST['id_anggota']."',
+          '".$_POST['nim']."',
           '".$_POST['tgl_pinjam']."',
 		  'PIN',
 		  '".$tgl_k."',
 		  '".$tgl_hk."');";
-		$sql_simpan .= "INSERT INTO log_pinjam (id_buku,id_anggota,tgl_pinjam) VALUES (
+		$sql_simpan .= "INSERT INTO log_pinjam (id_buku,nim,tgl_pinjam) VALUES (
 			'".$_POST['id_buku']."',
-			'".$_POST['id_anggota']."',
+			'".$_POST['nim']."',
             '".$_POST['tgl_pinjam']."')";   
         $query_simpan = mysqli_multi_query($koneksi, $sql_simpan);
         mysqli_close($koneksi);
@@ -132,7 +132,7 @@ if (strlen($tambah) == 1) {
       Swal.fire({title: 'Tambah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
       }).then((result) => {
           if (result.value) {
-              window.location = 'index.php?page=data_sirkul';
+              window.location = 'index.php?page=data_peminjaman';
           }
       })</script>";
       }else{
@@ -140,7 +140,7 @@ if (strlen($tambah) == 1) {
       Swal.fire({title: 'Tambah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
       }).then((result) => {
           if (result.value) {
-              window.location = 'index.php?page=add_sirkul';
+              window.location = 'index.php?page=add_peminjaman';
           }
       })</script>";
     }

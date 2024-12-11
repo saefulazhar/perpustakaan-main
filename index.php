@@ -103,7 +103,7 @@ include "inc/koneksi.php";
 							</li>
 	
 							<li class="menu">
-								<a href="?page=data_sirkul">
+								<a href="?page=data_peminjaman">
 								<ion-icon name="swap-vertical"></ion-icon>
 									<span class="description">Peminjaman</span>
 									<span class="pull-right-container">
@@ -120,7 +120,7 @@ include "inc/koneksi.php";
 								</a>
 	
 							<li class="menu">
-									<a href="?page=MyApp/data_agt">
+									<a href="?page=MyApp/data_mahasiswa">
 									<ion-icon name="people"></ion-icon>
 									<span class="description">Kelola Mahasiswa</span>
 									<span class="pull-right-container">
@@ -139,7 +139,7 @@ include "inc/koneksi.php";
 	
 	
 							<li class="menu">
-								<a href="?page=laporan_sirkulasi">
+								<a href="?page=laporan_peminjaman">
 								<ion-icon name="document"></ion-icon>
 									<span class="description">Laporan Peminjaman</span>
 									<span class="pull-right-container">
@@ -173,7 +173,7 @@ include "inc/koneksi.php";
 							</li>
 	
 							<li class="menu">
-								<a href="?page=data_sirkul">
+								<a href="?page=data_peminjaman">
 								<ion-icon name="swap-vertical"></ion-icon>
 									<span class="description">Peminjaman</span>
 									<span class="pull-right-container">
@@ -190,9 +190,9 @@ include "inc/koneksi.php";
 								</a>
 	
 							<li class="menu">
-									<a href="?page=MyApp/data_agt">
+									<a href="?page=MyApp/data_mahasiswa">
 									<ion-icon name="people"></ion-icon>
-									<span class="description">Kelola Anggota</span>
+									<span class="description">Kelola Mahasiswa</span>
 									<span class="pull-right-container">
 									</span>
 								</a>
@@ -209,7 +209,7 @@ include "inc/koneksi.php";
 	
 	
 							<li class="menu">
-								<a href="?page=laporan_sirkulasi">
+								<a href="?page=laporan_peminjaman">
 								<ion-icon name="document"></ion-icon>
 									<span class="description">Laporan Peminjaman</span>
 									<span class="pull-right-container">
@@ -271,24 +271,24 @@ include "inc/koneksi.php";
 							break;
 
 
-							//agt
-						case 'MyApp/data_agt':
-							include "admin/agt/data_agt.php";
+							//mahasiswa
+						case 'MyApp/data_mahasiswa':
+							include "admin/mahasiswa/data_mahasiswa.php";
 							break;
-						case 'MyApp/add_agt':
-							include "admin/agt/add_agt.php";
+						case 'MyApp/add_mahasiswa':
+							include "admin/mahasiswa/add_mahasiswa.php";
 							break;
-						case 'MyApp/edit_agt':
-							include "admin/agt/edit_agt.php";
+						case 'MyApp/edit_mahasiswa':
+							include "admin/mahasiswa/edit_mahasiswa.php";
 							break;
-						case 'MyApp/del_agt':
-							include "admin/agt/del_agt.php";
+						case 'MyApp/del_mahasiswa':
+							include "admin/mahasiswa/del_mahasiswa.php";
 							break;
-						case 'MyApp/print_agt':
-							include "admin/agt/print_agt.php";
+						case 'MyApp/print_mahasiswa':
+							include "admin/mahasiswa/print_mahasiswa.php";
 							break;
-						case 'MyApp/print_allagt':
-							include "admin/agt/print_allagt.php";
+						case 'MyApp/print_allmahasiswa':
+							include "admin/mahasiswa/print_allmahasiswa.php";
 							break;
 
 
@@ -306,18 +306,18 @@ include "inc/koneksi.php";
 							include "admin/buku/del_buku.php";
 							break;
 
-							//sirkul
-						case 'data_sirkul':
-							include "admin/sirkul/data_sirkul.php";
+							//peminjaman
+						case 'data_peminjaman':
+							include "admin/peminjaman/data_peminjaman.php";
 							break;
-						case 'add_sirkul':
-							include "admin/sirkul/add_sirkul.php";
+						case 'add_peminjaman':
+							include "admin/peminjaman/add_peminjaman.php";
 							break;
 						case 'panjang':
-							include "admin/sirkul/panjang.php";
+							include "admin/peminjaman/perpanjang.php";
 							break;
 						case 'kembali':
-							include "admin/sirkul/kembali.php";
+							include "admin/peminjaman/kembalikan.php";
 							break;
 
 							//log
@@ -329,8 +329,8 @@ include "inc/koneksi.php";
 							break;
 
 							//laporan
-						case 'laporan_sirkulasi':
-							include "admin/laporan/laporan_sirkulasi.php";
+						case 'laporan_peminjaman':
+							include "admin/laporan/laporan_peminjaman.php";
 							break;
 						case 'MyApp/print_laporan':
 							include "admin/laporan/print_laporan.php";

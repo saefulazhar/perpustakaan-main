@@ -6,7 +6,7 @@
 <!-- Main content -->
 <section class="content">
 	<div class="box box-primary">
-		<div class="box-header with-border">
+		<div class="box-header ">
 		<a href="?page=MyApp/print_laporan" title="Print" class="btn btn-success">
 		<ion-icon name="print" class="icon-top"></ion-icon>Print</a>
 		</div>
@@ -38,18 +38,18 @@
 				SELECT 
 					tb_peminjaman.id_buku, 
 					tb_buku.judul_buku, 
-					tb_mahasiswa.id_anggota,
+					tb_mahasiswa.nim,
 					tb_mahasiswa.nama,
-					tb_peminjaman.id_sk,
+					tb_peminjaman.id_pinjam,
 					tb_peminjaman.tgl_pinjam,
 					tb_peminjaman.tgl_kembali,
 					tb_peminjaman.tgl_dikembalikan,
 					IF(DATEDIFF(NOW(), tb_peminjaman.tgl_kembali) <= 0, 0, DATEDIFF(NOW(), tb_peminjaman.tgl_kembali)) AS telat_pengembalian 
 				FROM tb_peminjaman 
-				JOIN tb_mahasiswa ON tb_mahasiswa.id_anggota = tb_peminjaman.id_anggota 
+				JOIN tb_mahasiswa ON tb_mahasiswa.nim = tb_peminjaman.nim 
 				JOIN tb_buku ON tb_buku.id_buku = tb_peminjaman.id_buku 
 				WHERE tb_peminjaman.status = 'KEM'
-				ORDER BY id_anggota
+				ORDER BY nim
 				");
 
 				$no =null;
@@ -60,7 +60,7 @@
 					$total_denda=$total_denda+($data['telat_pengembalian']*$tarif_denda);
 					echo '<tr>
 						<td>'.$no.'</td>
-						<td>'.$data['id_sk'].'</td>
+						<td>'.$data['id_pinjam'].'</td>
 						<td>'.$data['judul_buku'].'</td>
 				
 						<td>'.$data['nama'].'</td>

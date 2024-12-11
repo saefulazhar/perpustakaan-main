@@ -8,10 +8,10 @@
 <!-- Main content -->
 <section class="content">
 	<div class="box box-primary">
-		<div class="box-header with-border">
-			<a href="?page=MyApp/add_agt" title="Tambah Data" class="btn btn-primary">
+		<div class="box-header ">
+			<a href="?page=MyApp/add_mahasiswa" title="Tambah Data" class="btn btn-primary">
 			<ion-icon name="add-circle" class="icon-top"></ion-icon>Tambah Data</a>
-			<a href="?page=MyApp/print_allagt" title="Print" class="btn btn-success">
+			<a href="?page=MyApp/print_allmahasiswa" title="Print" class="btn btn-success">
 			<ion-icon name="print" class="icon-top"></ion-icon>Print</a>
 		</div>
 		<!-- /.box-header -->
@@ -21,7 +21,7 @@
 					<thead>
 						<tr>
 							<th>No</th>
-							<th>Id Mahasiswa</th>
+							<th>NIM</th>
 							<th>Nama</th>
 							<th>JK</th>
 							<th>prodi</th>
@@ -42,7 +42,7 @@
 								<?php echo $no++; ?>
 							</td>
 							<td>
-								<?php echo $data['id_anggota']; ?>
+								<?php echo $data['nim']; ?>
 							</td>
 							<td>
 								<?php echo $data['nama']; ?>
@@ -58,17 +58,17 @@
 							</td>
 
 							<td>
-								<a href="?page=MyApp/edit_agt&kode=<?php echo $data['id_anggota']; ?>" title="Ubah Data"
+								<a href="?page=MyApp/edit_mahasiswa&kode=<?php echo $data['nim']; ?>" title="Ubah Data"
 								 class="btn-success btn-action">
 								 <ion-icon name="create"></ion-icon>
 								</a>
 
-								<a href="?page=MyApp/del_agt&kode=<?php echo $data['id_anggota']; ?>" onclick="return confirm('Yakin Hapus Data Ini ?')"
+								<a href="?page=MyApp/del_mahasiswa&kode=<?php echo $data['nim']; ?>" onclick="return confirm('Yakin Hapus Data Ini ?')"
 								 title="Hapus" class="btn-danger btn-action">
 								 <ion-icon name="trash"></ion-icon>
 				 				 </a>
 
-								<a href="?page=MyApp/print_agt&kode=<?php echo $data['id_anggota'] ?>" title="print"
+								<a href="?page=MyApp/print_mahasiswa&kode=<?php echo $data['nim'] ?>" title="print"
 								 target="_blank" class="btn-primary btn-action">
 								 <ion-icon name="print"></ion-icon>
 								</a>

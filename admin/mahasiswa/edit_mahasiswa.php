@@ -1,7 +1,7 @@
 <?php
 
     if(isset($_GET['kode'])){
-        $sql_cek = "SELECT * FROM tb_mahasiswa WHERE id_anggota='".$_GET['kode']."'";
+        $sql_cek = "SELECT * FROM tb_mahasiswa WHERE nim='".$_GET['kode']."'";
         $query_cek = mysqli_query($koneksi, $sql_cek);
         $data_cek = mysqli_fetch_array($query_cek,MYSQLI_BOTH);
     }
@@ -9,18 +9,17 @@
 
 <section class="content-header">
 	<h1>
-		Master Data
-		<small>Data Anggota</small>
+		Kelola Mahasiswa
 	</h1>
 </section>
 
 <section class="content">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-12 form-style">
 			<!-- general form elements -->
 			<div class="box box-success">
-				<div class="box-header with-border">
-					<h3 class="box-title">Ubah Anggota</h3>
+				<div class="box-header ">
+					<h3 class="box-title">Ubah Data Mahasiswa</h3>
 				</div>
 				<!-- /.box-header -->
 				<!-- form start -->
@@ -28,8 +27,8 @@
 					<div class="box-body">
 
 						<div class="form-group">
-							<label>Id anggota</label>
-							<input type='text' class="form-control" name="id_anggota" value="<?php echo $data_cek['id_anggota']; ?>"
+							<label>Id Mahasiswa</label>
+							<input type='text' class="form-control" name="nim" value="<?php echo $data_cek['nim']; ?>"
 							 readonly/>
 						</div>
 
@@ -55,9 +54,17 @@
 						</div>
 
 						<div class="form-group">
-							<label>prodi</label>
-							<input type='text' class="form-control" name="prodi" value="<?php echo $data_cek['prodi']; ?>"
-							/>
+							<label>Prodi</label>
+							<select name="prodi" id="prodi" class="form-control" required>
+								<option>-- Pilih --</option>
+								<option>Informatika</option>
+								<option>Sistem Informasi</option>
+								<option>Akuntansi</option>
+								<option>Manajemen</option>
+								<option>Keperawatan</option>
+								<option>Kebidanan</option>
+								<option>Profesi Ners</option>
+							</select>
 						</div>
 
 						<div class="form-group">
@@ -71,7 +78,7 @@
 
 					<div class="box-footer">
 						<input type="submit" name="Ubah" value="Ubah" class="btn btn-success">
-						<a href="?page=MyApp/data_agt" class="btn btn-warning">Batal</a>
+						<a href="?page=MyApp/data_mahasiswa" class="btn btn-warning">Batal</a>
 					</div>
 				</form>
 			</div>
@@ -87,7 +94,7 @@ if (isset ($_POST['Ubah'])){
 		jekel='".$_POST['jekel']."',
 		prodi='".$_POST['prodi']."',
         no_hp='".$_POST['no_hp']."'
-        WHERE id_anggota='".$_POST['id_anggota']."'";
+        WHERE nim='".$_POST['nim']."'";
     $query_ubah = mysqli_query($koneksi, $sql_ubah);
 
     if ($query_ubah) {
@@ -95,7 +102,7 @@ if (isset ($_POST['Ubah'])){
         Swal.fire({title: 'Ubah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
         }).then((result) => {
             if (result.value) {
-                window.location = 'index.php?page=MyApp/data_agt';
+                window.location = 'index.php?page=MyApp/data_mahasiswa';
             }
         })</script>";
         }else{
@@ -103,7 +110,7 @@ if (isset ($_POST['Ubah'])){
         Swal.fire({title: 'Ubah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
         }).then((result) => {
             if (result.value) {
-                window.location = 'index.php?page=MyApp/data_agt';
+                window.location = 'index.php?page=MyApp/data_mahasiswa';
             }
         })</script>";
     }
